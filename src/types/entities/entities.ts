@@ -26,7 +26,7 @@ export interface People {
   gender: string,
   homeworld: string,
   films: Array<string>,
-  species: [],
+  species: Array<string>,
   vehicles: Array<string>,
   starships: Array<string>,
   created: string,
