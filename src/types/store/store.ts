@@ -1,33 +1,33 @@
 import {
-  Film, People, Planet, Species, Starship, Vehicle
+  Film, Person, Planet, Species, Starship, Vehicle
 } from '../entities/entities';
 
 export interface PeopleStore {
-  people: Array<People>,
-  person: People
+  people: Array<Person> | null,
+  person: Person | null
 }
 
 export interface FilmsStore {
   films: Array<Film> | null,
-  film: Film
+  film: Film | null
 }
 
 export interface StarhipsStore {
   starships: Array<Starship> | null,
-  starship: Starship
+  starship: Starship | null
 }
 
 export interface VehiclesStore {
   vehicles: Array<Vehicle> | null,
-  vehicle: Vehicle
+  vehicle: Vehicle | null
 }
 
 export interface SpeciesStore {
   species: Array<Species> | null,
-  race: Film
+  race: Film | null
 }
 
 export interface PlanetsStore {
   planets: Array<Planet> | null,
-  planet: Planet
+  planet: Planet | null
 }
