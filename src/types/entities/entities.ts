@@ -15,7 +15,7 @@ export interface Film {
   url: string
 }
 
-export interface People {
+export interface Person {
   name: string,
   height: string,
   mass: string,
