@@ -1,4 +1,6 @@
-import {Film, People, Planet, Species, Starship, Vehicle} from "../entities/entities";
+import {
+  Film, People, Planet, Species, Starship, Vehicle
+} from '../entities/entities';
 
 export interface PeopleStore {
   people: Array<People>,
