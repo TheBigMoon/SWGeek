@@ -17,12 +17,14 @@ module.exports = {
     '@typescript-eslint'
   ],
   'rules': {
+    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx', '.tsx'] }],
     'linebreak-style': 'off',
     'comma-dangle': 'off',
     'quote-props': 'off',
     'no-unused-vars': 'off',
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
-    'camelcase': 'off'
+    'camelcase': 'off',
+    'no-return-await': 'off'
   }
 };
