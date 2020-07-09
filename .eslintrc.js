@@ -27,6 +27,7 @@ module.exports = {
     'camelcase': 'off',
     'no-return-await': 'off',
     'react/prop-types': 'off',
-    'no-shadow': 'off'
+    'no-shadow': 'off',
+    'no-plusplus': 'off',
   }
 };
