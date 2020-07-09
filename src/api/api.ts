@@ -22,32 +22,32 @@ const API = {
       .then((response) => response.data);
   },
   async getStarships() {
-    return await instance.get('starships')
-      .then((response) => response.data);
+    return await instance.get('starships/')
+      .then((response) => response.data.results);
   },
   async getStarship(starshipId: number) {
     return await instance.get(`starships/${starshipId}/`)
       .then((response) => response.data);
   },
   async getVehicles() {
-    return await instance.get('vehicles')
-      .then((response) => response.data);
+    return await instance.get('vehicles/')
+      .then((response) => response.data.results);
   },
   async getVehicle(vehicleId: number) {
     return await instance.get(`vehicles/${vehicleId}/`)
       .then((response) => response.data);
   },
   async getSpecies() {
-    return await instance.get('species')
-      .then((response) => response.data);
+    return await instance.get('species/')
+      .then((response) => response.data.results);
   },
   async getRace(raceId: number) {
     return await instance.get(`species/${raceId}/`)
       .then((response) => response.data);
   },
   async getPlanets() {
-    return await instance.get('planets')
-      .then((response) => response.data);
+    return await instance.get('planets/')
+      .then((response) => response.data.results);
   },
   async getPlanet(planetId: number) {
     return await instance.get(`planets/${planetId}/`)
