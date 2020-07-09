@@ -16,7 +16,7 @@ const peopleReducer = (state = initialState, action: PeopleActionType): PeopleSt
         ...state,
         people: [...action.people],
         prevPage: action.prevPage,
-        nextPage: action.prevPage
+        nextPage: action.nextPage
       };
     }
     case SET_PERSON: {
