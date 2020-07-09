@@ -8,14 +8,12 @@ interface PaginatorProps {
 }
 const Paginator: React.FC<PaginatorProps> = ({ prevPage, nextPage, getContent }) => {
   const dispatch = useDispatch();
-  // eslint-disable-next-line no-debugger
-  debugger;
   return (
     <div>
       {
         prevPage
           ? (
-            <button onClick={() => dispatch(getContent(prevPage?.replace('http://swapi.dev/api/people/', '')))}>
+            <button onClick={() => dispatch(getContent(prevPage?.replace(/http:\/\/swapi\.dev\/api\/.+\//g, '')))}>
               prevPage
             </button>
           ) : null
@@ -23,7 +21,7 @@ const Paginator: React.FC<PaginatorProps> = ({ prevPage, nextPage, getContent })
       {
         nextPage
           ? (
-            <button onClick={() => dispatch(getContent(nextPage?.replace('http://swapi.dev/api/people/', '')))}>
+            <button onClick={() => dispatch(getContent(nextPage?.replace(/http:\/\/swapi\.dev\/api\/.+\//g, '')))}>
               nextPage
             </button>
           ) : null
