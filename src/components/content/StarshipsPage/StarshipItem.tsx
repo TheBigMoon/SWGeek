@@ -1,11 +1,11 @@
 import React from 'react';
 import { Starship } from '../../../types/entities/entities';
 
-interface FilmProps {
+interface StarshipProps {
   starship: Starship | null
 }
 
-const StarshipItem: React.FC<FilmProps> = ({ starship }) => {
+const StarshipItem: React.FC<StarshipProps> = ({ starship }) => {
   const pilots = starship?.pilots.map((pilot) => <div>{pilot}</div>);
   const films = starship?.films.map((film) => <div>{film}</div>);
 

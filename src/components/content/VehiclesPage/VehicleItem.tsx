@@ -1,11 +1,11 @@
 import React from 'react';
 import { Vehicle } from '../../../types/entities/entities';
 
-interface FilmProps {
+interface VehicleProps {
   vehicle: Vehicle | null
 }
 
-const VehicleItem: React.FC<FilmProps> = ({ vehicle }) => {
+const VehicleItem: React.FC<VehicleProps> = ({ vehicle }) => {
   const pilots = vehicle?.pilots.map((pilot) => <div>{pilot}</div>);
   const films = vehicle?.films.map((film) => <div>{film}</div>);
   return (
