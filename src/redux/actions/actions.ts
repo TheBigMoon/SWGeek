@@ -28,7 +28,7 @@ import {
   Film, Person, Planet, Race, Starship, Vehicle
 } from '../../types/entities/entities';
 import {
-  GetPeoples, GetPerson, SetPeople, SetPerson
+  GetPeople, GetPerson, SetPeople, SetPerson
 } from '../../types/actions/peopleActionsTypes';
 import {
   GetFilm, GetFilms, SetFilm, SetFilms
@@ -47,8 +47,8 @@ import {
 } from '../../types/actions/planetsActionTypes';
 
 // PEOPLE ACTIONS
-export const getPeoples = (): GetPeoples => ({ type: GET_PEOPLE });
-export const setPeoples = (people: Array<Person>): SetPeople => ({ type: SET_PEOPLE, people });
+export const getPeople = (): GetPeople => ({ type: GET_PEOPLE });
+export const setPeople = (people: Array<Person>): SetPeople => ({ type: SET_PEOPLE, people });
 export const getPerson = (personId: number): GetPerson => ({ type: GET_PERSON, personId });
 export const setPerson = (person: Person): SetPerson => ({ type: SET_PERSON, person });
 
