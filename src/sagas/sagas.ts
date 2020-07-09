@@ -6,9 +6,9 @@ import {
   GET_PERSON, GET_PLANET, GET_PLANETS, GET_RACE, GET_SPECIES,
   GET_STARSHIP,
   GET_STARSHIPS, GET_VEHICLE, GET_VEHICLES
-} from '../../constants/actionTypeConstants';
-import { GetPerson } from '../actions/peopleActionsTypes';
-import API from '../../api/api';
+} from '../constants/actionTypeConstants';
+import { GetPerson } from '../types/actions/peopleActionsTypes';
+import API from '../api/api';
 import {
   setFilm,
   setFilms,
@@ -21,12 +21,12 @@ import {
   setStarships,
   setVehicle,
   setVehicles
-} from '../../redux/actions/actions';
-import { GetFilm } from '../actions/filmsActionsTypes';
-import { GetStarship } from '../actions/starshipsActionsTypes';
-import {GetVehicle} from "../actions/vehiclesActionTypes";
-import {GetRace} from "../actions/speciesActionTypes";
-import {GetPlanet} from "../actions/planetsActionTypes";
+} from '../redux/actions/actions';
+import { GetFilm } from '../types/actions/filmsActionsTypes';
+import { GetStarship } from '../types/actions/starshipsActionsTypes';
+import { GetVehicle } from '../types/actions/vehiclesActionTypes';
+import { GetRace } from '../types/actions/speciesActionTypes';
+import { GetPlanet } from '../types/actions/planetsActionTypes';
 
 function* getPeopleWorker() {
   const people = yield call(API.getPeople);
