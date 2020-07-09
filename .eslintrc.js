@@ -29,5 +29,6 @@ module.exports = {
     'react/prop-types': 'off',
     'no-shadow': 'off',
     'no-plusplus': 'off',
+    'react/button-has-type': 'off'
   }
 };
