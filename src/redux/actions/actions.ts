@@ -47,8 +47,12 @@ import {
 } from '../../types/actions/planetsActionTypes';
 
 // PEOPLE ACTIONS
-export const getPeople = (): GetPeople => ({ type: GET_PEOPLE });
-export const setPeople = (people: Array<Person>): SetPeople => ({ type: SET_PEOPLE, people });
+export const getPeople = (page: string): GetPeople => ({ type: GET_PEOPLE, page });
+export const setPeople = (
+  people: Array<Person>, prevPage: string | null, nextPage: string | null
+): SetPeople => ({
+  type: SET_PEOPLE, people, prevPage, nextPage
+});
 export const getPerson = (personId: number): GetPerson => ({ type: GET_PERSON, personId });
 export const setPerson = (person: Person): SetPerson => ({ type: SET_PERSON, person });
 
