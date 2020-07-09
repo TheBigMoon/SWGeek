@@ -7,7 +7,7 @@ const instance = axios.create({
 const API = {
   async getPeople() {
     return await instance.get('people/')
-      .then((response) => response.data);
+      .then((response) => response.data.results);
   },
   async getPerson(personId: number) {
     return await instance.get(`people/${personId}/`)

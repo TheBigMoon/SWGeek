@@ -3,7 +3,9 @@ import './App.css';
 import { Route } from 'react-router-dom';
 import Header from './components/Header';
 import FilmsContainer from './components/content/FilmsPage/FilmsContainer';
-import FilmContainer from "./components/content/FilmsPage/FilmContainer";
+import FilmContainer from './components/content/FilmsPage/FilmContainer';
+import PeopleContainer from './components/content/PeoplePage/PeopleContainer';
+import PersonContainer from './components/content/PeoplePage/PersonContainer';
 
 function App() {
   return (
@@ -11,9 +13,8 @@ function App() {
       <Header />
       <Route exact path="/films" render={() => <FilmsContainer />} />
       <Route exact path="/films/:filmId" render={() => <FilmContainer />} />
-      <Route exact path="/people">
-        People
-      </Route>
+      <Route exact path="/people" render={() => <PeopleContainer />} />
+      <Route exact path="/people/:personId" render={() => <PersonContainer />} />
       <Route exact path="/starships">
         Starships
       </Route>
