@@ -4,7 +4,9 @@ import { SET_PLANET, SET_PLANETS } from '../../constants/actionTypeConstants';
 
 const initialState: PlanetsStore = {
   planets: null,
-  planet: null
+  planet: null,
+  prevPage: null,
+  nextPage: null
 };
 
 const planetsReducer = (state = initialState, action: PlanetsActionType): PlanetsStore => {

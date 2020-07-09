@@ -4,7 +4,9 @@ import { SET_VEHICLE, SET_VEHICLES } from '../../constants/actionTypeConstants';
 
 const initialState: VehiclesStore = {
   vehicles: null,
-  vehicle: null
+  vehicle: null,
+  prevPage: null,
+  nextPage: null
 };
 
 const vehiclesReducer = (state = initialState, action: VehiclesActionType): VehiclesStore => {
