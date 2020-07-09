@@ -1,6 +1,6 @@
 import { PlanetsStore } from '../../types/store/store';
-import { SET_PLANET, SET_PLANETS } from '../actions/actions';
 import { PlanetsActionType } from '../../types/actions/planetsActionTypes';
+import { SET_PLANET, SET_PLANETS } from '../../constants/actionTypeConstants';
 
 const initialState: PlanetsStore = {
   planets: null,

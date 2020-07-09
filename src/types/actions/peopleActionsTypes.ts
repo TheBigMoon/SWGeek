@@ -1,7 +1,7 @@
+import { Person } from '../entities/entities';
 import {
   GET_PEOPLE, GET_PERSON, SET_PEOPLE, SET_PERSON
-} from '../../redux/actions/actions';
-import { Person } from '../entities/entities';
+} from '../../constants/actionTypeConstants';
 
 export type PeopleActionType = SetPeople | SetPerson
 

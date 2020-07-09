@@ -1,7 +1,7 @@
+import { Film } from '../entities/entities';
 import {
   GET_FILM, GET_FILMS, SET_FILM, SET_FILMS
-} from '../../redux/actions/actions';
-import { Film } from '../entities/entities';
+} from '../../constants/actionTypeConstants';
 
 export type FilmsActionType = SetFilms | SetFilm
 

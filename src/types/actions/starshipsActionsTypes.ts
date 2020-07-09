@@ -1,7 +1,7 @@
+import { Starship } from '../entities/entities';
 import {
   GET_STARSHIP, GET_STARSHIPS, SET_STARSHIP, SET_STARSHIPS
-} from '../../redux/actions/actions';
-import { Starship } from '../entities/entities';
+} from '../../constants/actionTypeConstants';
 
 export type StarshipsActionType = SetStarships | SetStarship
 

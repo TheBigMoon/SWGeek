@@ -1,6 +1,6 @@
 import { VehiclesStore } from '../../types/store/store';
-import { SET_VEHICLE, SET_VEHICLES } from '../actions/actions';
 import { VehiclesActionType } from '../../types/actions/vehiclesActionTypes';
+import { SET_VEHICLE, SET_VEHICLES } from '../../constants/actionTypeConstants';
 
 const initialState: VehiclesStore = {
   vehicles: null,

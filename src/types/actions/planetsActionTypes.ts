@@ -1,7 +1,7 @@
+import { Planet } from '../entities/entities';
 import {
   GET_PLANET, GET_PLANETS, SET_PLANET, SET_PLANETS
-} from '../../redux/actions/actions';
-import { Planet } from '../entities/entities';
+} from '../../constants/actionTypeConstants';
 
 export type PlanetsActionType = SetPlanets | SetPlanet
 

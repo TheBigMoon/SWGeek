@@ -1,7 +1,7 @@
+import { Race } from '../entities/entities';
 import {
   GET_RACE, GET_SPECIES, SET_RACE, SET_SPECIES
-} from '../../redux/actions/actions';
-import { Race } from '../entities/entities';
+} from '../../constants/actionTypeConstants';
 
 export type SpeciesActionType = SetSpecies | SetRace
 

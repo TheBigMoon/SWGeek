@@ -1,7 +1,7 @@
+import { Vehicle } from '../entities/entities';
 import {
   GET_VEHICLE, GET_VEHICLES, SET_VEHICLE, SET_VEHICLES
-} from '../../redux/actions/actions';
-import { Vehicle } from '../entities/entities';
+} from '../../constants/actionTypeConstants';
 
 export type VehiclesActionType = SetVehicles | SetVehicle
 

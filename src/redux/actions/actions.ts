@@ -1,4 +1,30 @@
 import {
+  GET_FILM,
+  GET_FILMS,
+  GET_PEOPLE,
+  GET_PERSON,
+  GET_PLANET,
+  GET_PLANETS,
+  GET_RACE,
+  GET_SPECIES,
+  GET_STARSHIP,
+  GET_STARSHIPS,
+  GET_VEHICLE,
+  GET_VEHICLES,
+  SET_FILM,
+  SET_FILMS,
+  SET_PEOPLE,
+  SET_PERSON,
+  SET_PLANET,
+  SET_PLANETS,
+  SET_RACE,
+  SET_SPECIES,
+  SET_STARSHIP,
+  SET_STARSHIPS,
+  SET_VEHICLE,
+  SET_VEHICLES
+} from '../../constants/actionTypeConstants';
+import {
   Film, Person, Planet, Race, Starship, Vehicle
 } from '../../types/entities/entities';
 import {
@@ -16,32 +42,9 @@ import {
 import {
   GetRace, GetSpecies, SetRace, SetSpecies
 } from '../../types/actions/speciesActionTypes';
-import {GetPlanet, GetPlanets, SetPlanet, SetPlanets} from '../../types/actions/planetsActionTypes';
-
-export const GET_PEOPLE = 'GET_PEOPLE';
-export const SET_PEOPLE = 'SET_PEOPLE';
-export const GET_PERSON = 'GET_PERSON';
-export const SET_PERSON = 'SET_PERSON';
-export const GET_FILMS = 'GET_FILMS';
-export const SET_FILMS = 'SET_FILMS';
-export const GET_FILM = 'GET_FILM';
-export const SET_FILM = 'SET_FILM';
-export const GET_STARSHIPS = 'GET_STARSHIPS';
-export const SET_STARSHIPS = 'SET_STARSHIPS';
-export const GET_STARSHIP = 'GET_STARSHIP';
-export const SET_STARSHIP = 'SET_STARSHIP';
-export const GET_VEHICLES = 'GET_VEHICLES';
-export const SET_VEHICLES = 'SET_VEHICLES';
-export const GET_VEHICLE = 'GET_VEHICLE';
-export const SET_VEHICLE = 'SET_VEHICLE';
-export const GET_SPECIES = 'GET_SPECIES';
-export const SET_SPECIES = 'SET_SPECIES';
-export const GET_RACE = 'GET_RACE';
-export const SET_RACE = 'SET_RACE';
-export const GET_PLANETS = 'GET_PLANETS';
-export const SET_PLANETS = 'SET_PLANETS';
-export const GET_PLANET = 'GET_PLANET';
-export const SET_PLANET = 'SET_PLANET';
+import {
+  GetPlanet, GetPlanets, SetPlanet, SetPlanets
+} from '../../types/actions/planetsActionTypes';
 
 // PEOPLE ACTIONS
 export const getPeoples = (): GetPeoples => ({ type: GET_PEOPLE });

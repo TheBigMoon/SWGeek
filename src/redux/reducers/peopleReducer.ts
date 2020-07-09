@@ -1,6 +1,6 @@
 import { PeopleStore } from '../../types/store/store';
-import { SET_PEOPLE, SET_PERSON } from '../actions/actions';
 import { PeopleActionType } from '../../types/actions/peopleActionsTypes';
+import { SET_PEOPLE, SET_PERSON } from '../../constants/actionTypeConstants';
 
 const initialState: PeopleStore = {
   people: null,
