@@ -10,13 +10,13 @@ interface StateToProps {
 }
 
 interface DispatchToProps {
-  getFilms: () => void
+  getFilms: (page: string) => void
 }
 
 const FilmsContainer: React.FC<StateToProps & DispatchToProps> = ({ films, getFilms }) => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getFilms());
+    dispatch(getFilms(''));
   }, [dispatch, getFilms]);
   const allFilms = films?.map((film) => <FilmItem film={film} />);
   return (
