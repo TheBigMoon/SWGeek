@@ -1,6 +1,6 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import sagaWatcher from '../types/sagas/sagas';
+import sagaWatcher from '../sagas/sagas';
 import peopleReducer from './reducers/peopleReducer';
 import filmsReducer from './reducers/filmsReducer';
 import starshipsReducer from './reducers/starshipsReducer';
