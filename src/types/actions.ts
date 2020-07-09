@@ -3,6 +3,8 @@ import {
   GET_FILMS,
   GET_PEOPLE,
   GET_PERSON,
+  GET_PLANET,
+  GET_PLANETS,
   GET_RACE,
   GET_SPECIES,
   GET_STARSHIP,
@@ -13,6 +15,8 @@ import {
   SET_FILMS,
   SET_PEOPLE,
   SET_PERSON,
+  SET_PLANET,
+  SET_PLANETS,
   SET_RACE,
   SET_SPECIES,
   SET_STARSHIP,
@@ -21,7 +25,7 @@ import {
   SET_VEHICLES
 } from '../redux/actions/actions';
 import {
-  Film, Person, Race, Starship, Vehicle
+  Film, Person, Planet, Race, Starship, Vehicle
 } from './entities/entities';
 
 export type PeopleActionType = SetPeople | SetPerson
@@ -58,3 +62,10 @@ export interface GetSpecies {type: typeof GET_SPECIES}
 export interface SetSpecies {type: typeof SET_SPECIES, species: Array<Race>}
 export interface GetRace {type: typeof GET_RACE, raceId: number}
 export interface SetRace {type: typeof SET_RACE, race: Race}
+
+export type PlanetsActionType = SetPlanets | SetPlanet
+
+export interface GetPlanets {type: typeof GET_PLANETS}
+export interface SetPlanets {type: typeof SET_PLANETS, planets: Array<Planet>}
+export interface GetPlanet {type: typeof GET_PLANET, planetId: number}
+export interface SetPlanet {type: typeof SET_PLANET, planet: Planet}
