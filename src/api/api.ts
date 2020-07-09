@@ -39,7 +39,7 @@ const API = {
   },
   async getSpecies() {
     return await instance.get('species/')
-      .then((response) => response.data);
+      .then((response) => response.data.results);
   },
   async getRace(raceId: number) {
     return await instance.get(`species/${raceId}/`)
@@ -47,7 +47,7 @@ const API = {
   },
   async getPlanets() {
     return await instance.get('planets/')
-      .then((response) => response.data);
+      .then((response) => response.data.results);
   },
   async getPlanet(planetId: number) {
     return await instance.get(`planets/${planetId}/`)
