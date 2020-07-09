@@ -2,13 +2,13 @@ import {
   GetFilm,
   GetFilms,
   GetPeoples,
-  GetPerson, GetStarship, GetStarships,
+  GetPerson, GetStarship, GetStarships, GetVehicle, GetVehicles,
   SetFilm,
   SetFilms,
   SetPeople,
-  SetPerson, SetStarship, SetStarships
+  SetPerson, SetStarship, SetStarships, SetVehicle, SetVehicles
 } from '../../types/actions';
-import { Film, Person, Starship } from '../../types/entities/entities';
+import {Film, Person, Starship, Vehicle} from '../../types/entities/entities';
 
 export const GET_PEOPLE = 'GET_PEOPLE';
 export const SET_PEOPLE = 'SET_PEOPLE';
@@ -22,6 +22,10 @@ export const GET_STARSHIPS = 'GET_STARSHIPS';
 export const SET_STARSHIPS = 'SET_STARSHIPS';
 export const GET_STARSHIP = 'GET_STARSHIP';
 export const SET_STARSHIP = 'SET_STARSHIP';
+export const GET_VEHICLES = 'GET_VEHICLES';
+export const SET_VEHICLES = 'SET_VEHICLES';
+export const GET_VEHICLE = 'GET_VEHICLE';
+export const SET_VEHICLE = 'SET_VEHICLE';
 
 // PEOPLE ACTIONS
 export const getPeoples = (): GetPeoples => ({ type: GET_PEOPLE });
@@ -44,3 +48,11 @@ export const getStarship = (starshipId: number): GetStarship => (
   { type: GET_STARSHIP, starshipId }
 );
 export const setStarship = (starship: Starship): SetStarship => ({ type: SET_STARSHIP, starship });
+
+// VEHICLES ACTIONS
+export const getVehicles = (): GetVehicles => ({ type: GET_VEHICLES });
+export const setVehicles = (vehicles: Array<Vehicle>): SetVehicles => (
+  { type: SET_VEHICLES, vehicles }
+);
+export const getVehicle = (vehicleId: number): GetVehicle => ({ type: GET_VEHICLE, vehicleId });
+export const setVehicle = (vehicle: Vehicle): SetVehicle => ({ type: SET_VEHICLE, vehicle });
