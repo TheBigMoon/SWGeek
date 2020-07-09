@@ -1,6 +1,6 @@
 import { FilmsStore } from '../../types/store/store';
 import { SET_FILM, SET_FILMS } from '../actions/actions';
-import { FilmsActionType } from '../../types/actions';
+import { FilmsActionType } from '../../types/actions/filmsActionsTypes';
 
 const initialState: FilmsStore = {
   films: null,

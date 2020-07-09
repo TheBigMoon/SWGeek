@@ -1,6 +1,6 @@
 import { StarhipsStore } from '../../types/store/store';
-import { StarshipsActionType } from '../../types/actions';
 import { SET_STARSHIP, SET_STARSHIPS } from '../actions/actions';
+import { StarshipsActionType } from '../../types/actions/starshipsActionsTypes';
 
 const initialState: StarhipsStore = {
   starships: null,

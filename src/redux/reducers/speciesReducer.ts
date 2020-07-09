@@ -1,6 +1,6 @@
 import { SpeciesStore } from '../../types/store/store';
 import { SET_RACE, SET_SPECIES } from '../actions/actions';
-import { SpeciesActionType } from '../../types/actions';
+import { SpeciesActionType } from '../../types/actions/speciesActionTypes';
 
 const initialState: SpeciesStore = {
   species: null,
