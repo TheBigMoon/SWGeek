@@ -1,5 +1,5 @@
 import { PeopleStore } from '../../types/store/store';
-import { ActionType } from '../../types/actions';
+import { PeopleActionType } from '../../types/actions';
 import { SET_PEOPLE, SET_PERSON } from '../actions/actions';
 
 const initialState: PeopleStore = {
@@ -7,7 +7,7 @@ const initialState: PeopleStore = {
   person: null
 };
 
-const peopleReducer = (state = initialState, action: ActionType): PeopleStore => {
+const peopleReducer = (state = initialState, action: PeopleActionType): PeopleStore => {
   switch (action.type) {
     case SET_PEOPLE: {
       return {
