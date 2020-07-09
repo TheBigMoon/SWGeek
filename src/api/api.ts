@@ -5,9 +5,9 @@ const instance = axios.create({
 });
 
 const API = {
-  async getPeople() {
-    return await instance.get('people/')
-      .then((response) => response.data.results);
+  async getPeople(page: string) {
+    return await instance.get(`people/${page}`)
+      .then((response) => response.data);
   },
   async getPerson(personId: number) {
     return await instance.get(`people/${personId}/`)
