@@ -2,13 +2,31 @@ import {
   GetFilm,
   GetFilms,
   GetPeoples,
-  GetPerson, GetRace, GetSpecies, GetStarship, GetStarships, GetVehicle, GetVehicles,
+  GetPerson,
+  GetPlanet,
+  GetPlanets,
+  GetRace,
+  GetSpecies,
+  GetStarship,
+  GetStarships,
+  GetVehicle,
+  GetVehicles,
   SetFilm,
   SetFilms,
   SetPeople,
-  SetPerson, SetRace, SetSpecies, SetStarship, SetStarships, SetVehicle, SetVehicles
+  SetPerson,
+  SetPlanet,
+  SetPlanets,
+  SetRace,
+  SetSpecies,
+  SetStarship,
+  SetStarships,
+  SetVehicle,
+  SetVehicles
 } from '../../types/actions';
-import {Film, Person, Race, Starship, Vehicle} from '../../types/entities/entities';
+import {
+  Film, Person, Planet, Race, Starship, Vehicle
+} from '../../types/entities/entities';
 
 export const GET_PEOPLE = 'GET_PEOPLE';
 export const SET_PEOPLE = 'SET_PEOPLE';
@@ -30,6 +48,10 @@ export const GET_SPECIES = 'GET_SPECIES';
 export const SET_SPECIES = 'SET_SPECIES';
 export const GET_RACE = 'GET_RACE';
 export const SET_RACE = 'SET_RACE';
+export const GET_PLANETS = 'GET_PLANETS';
+export const SET_PLANETS = 'SET_PLANETS';
+export const GET_PLANET = 'GET_PLANET';
+export const SET_PLANET = 'SET_PLANET';
 
 // PEOPLE ACTIONS
 export const getPeoples = (): GetPeoples => ({ type: GET_PEOPLE });
@@ -66,3 +88,9 @@ export const getSpecies = (): GetSpecies => ({ type: GET_SPECIES });
 export const setSpecies = (species: Array<Race>): SetSpecies => ({ type: SET_SPECIES, species });
 export const getRace = (raceId: number): GetRace => ({ type: GET_RACE, raceId });
 export const setRace = (race: Race): SetRace => ({ type: SET_RACE, race });
+
+// PLANETS ACTIONS
+export const getPlanets = (): GetPlanets => ({ type: GET_PLANETS });
+export const setPlanets = (planets: Array<Planet>): SetPlanets => ({ type: SET_PLANETS, planets });
+export const getPlanet = (planetId: number): GetPlanet => ({ type: GET_PLANET, planetId });
+export const setPlanet = (planet: Planet): SetPlanet => ({ type: SET_PLANET, planet });
