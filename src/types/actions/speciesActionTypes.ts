@@ -5,7 +5,12 @@ import {
 
 export type SpeciesActionType = SetSpecies | SetRace
 
-export interface GetSpecies {type: typeof GET_SPECIES}
-export interface SetSpecies {type: typeof SET_SPECIES, species: Array<Race>}
+export interface GetSpecies {type: typeof GET_SPECIES, page: string}
+export interface SetSpecies {
+  type: typeof SET_SPECIES,
+  species: Array<Race>,
+  prevPage: string | null,
+  nextPage: string | null
+}
 export interface GetRace {type: typeof GET_RACE, raceId: number}
 export interface SetRace {type: typeof SET_RACE, race: Race}
