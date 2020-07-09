@@ -25,6 +25,7 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
     'camelcase': 'off',
-    'no-return-await': 'off'
+    'no-return-await': 'off',
+    'react/prop-types': 'off'
   }
 };
