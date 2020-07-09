@@ -1,38 +1,38 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Film } from '../../../types/entities/entities';
 import FilmItem from './Film';
-import { getFilms } from '../../../redux/actions/actions';
+import { getFilm } from '../../../redux/actions/actions';
 
 interface StateToProps {
-  films: Array<Film> | null
+  film: Film | null
 }
 
 interface DispatchToProps {
-  getFilms: () => void
+  getFilm: (filmId: number) => void
 }
 
-const FilmsContainer: React.FC<StateToProps & DispatchToProps> = ({ films }) => {
+const FilmContainer: React.FC<StateToProps & DispatchToProps> = ({ film, getFilm }) => {
   const dispatch = useDispatch();
+  const { filmId } = useParams();
   useEffect(() => {
-    dispatch(getFilms());
-  }, [dispatch]);
-  const allFilms = films?.map((film) => <FilmItem film={film} />);
+    dispatch(getFilm(filmId));
+  }, [getFilm, filmId, dispatch]);
   return (
     <div>
-      Films
-      {allFilms}
+      <FilmItem film={film} />
     </div>
   );
 };
 
 const MapStateToProps = (state: App): StateToProps => ({
-  films: state.filmsPage.films
+  film: state.filmsPage.film
 });
 
 export default connect<StateToProps, DispatchToProps, {}, App>(
   MapStateToProps, {
-    getFilms
+    getFilm
   }
-)(FilmsContainer);
+)(FilmContainer);
