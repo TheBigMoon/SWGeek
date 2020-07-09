@@ -20,8 +20,6 @@ const VehicleContainer: React.FC<StateToProps & DispatchToProps> = ({ vehicle, g
   useEffect(() => {
     dispatch(getVehicle(vehicleId));
   }, [dispatch, getVehicle, vehicleId]);
-  // eslint-disable-next-line no-debugger
-  debugger;
   return (
     <div>
       <VehicleItem vehicle={vehicle} />

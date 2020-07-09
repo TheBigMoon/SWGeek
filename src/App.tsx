@@ -10,6 +10,8 @@ import StarshipsContainer from './components/content/StarshipsPage/StarshipsCont
 import StarshipContainer from './components/content/StarshipsPage/StarshipContainer';
 import VehiclesContainer from './components/content/VehiclesPage/VehiclesContainer';
 import VehicleContainer from './components/content/VehiclesPage/VehicleContainer';
+import SpeciesContainer from "./components/content/Species/SpeciesContainer";
+import RaceContainer from "./components/content/Species/RaceContainer";
 
 function App() {
   return (
@@ -23,9 +25,8 @@ function App() {
       <Route exact path="/starships/:starshipId" render={() => <StarshipContainer />} />
       <Route exact path="/vehicles" render={() => <VehiclesContainer />} />
       <Route exact path="/vehicles/:vehicleId" render={() => <VehicleContainer />} />
-      <Route exact path="/species">
-        Species
-      </Route>
+      <Route exact path="/species" render={() => <SpeciesContainer />} />
+      <Route exact path="/vehicles/:raceId" render={() => <RaceContainer />} />
       <Route exact path="/planets">
         Planets
       </Route>
