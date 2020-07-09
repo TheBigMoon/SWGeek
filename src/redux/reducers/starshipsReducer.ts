@@ -14,7 +14,9 @@ const starshipsReducer = (state = initialState, action: StarshipsActionType): St
     case SET_STARSHIPS: {
       return {
         ...state,
-        starships: [...action.starships]
+        starships: [...action.starships],
+        prevPage: action.prevPage,
+        nextPage: action.nextPage
       };
     }
     case SET_STARSHIP: {

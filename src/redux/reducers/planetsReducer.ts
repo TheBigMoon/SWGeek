@@ -14,7 +14,9 @@ const planetsReducer = (state = initialState, action: PlanetsActionType): Planet
     case SET_PLANETS: {
       return {
         ...state,
-        planets: [...action.planets]
+        planets: [...action.planets],
+        prevPage: action.prevPage,
+        nextPage: action.nextPage
       };
     }
     case SET_PLANET: {

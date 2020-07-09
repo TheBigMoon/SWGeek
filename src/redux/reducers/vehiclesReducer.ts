@@ -14,7 +14,9 @@ const vehiclesReducer = (state = initialState, action: VehiclesActionType): Vehi
     case SET_VEHICLES: {
       return {
         ...state,
-        vehicles: [...action.vehicles]
+        vehicles: [...action.vehicles],
+        prevPage: action.prevPage,
+        nextPage: action.nextPage
       };
     }
     case SET_VEHICLE: {
