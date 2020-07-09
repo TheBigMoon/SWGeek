@@ -7,7 +7,7 @@ import {
   GET_STARSHIP,
   GET_STARSHIPS, GET_VEHICLE, GET_VEHICLES
 } from '../constants/actionTypeConstants';
-import { GetPerson } from '../types/actions/peopleActionsTypes';
+import { GetPeople, GetPerson } from '../types/actions/peopleActionsTypes';
 import API from '../api/api';
 import {
   setFilm,
@@ -28,9 +28,10 @@ import { GetVehicle } from '../types/actions/vehiclesActionTypes';
 import { GetRace } from '../types/actions/speciesActionTypes';
 import { GetPlanet } from '../types/actions/planetsActionTypes';
 
-function* getPeopleWorker() {
-  const people = yield call(API.getPeople);
-  yield put(setPeople(people));
+function* getPeopleWorker(action: GetPeople) {
+  const { page } = action;
+  const { results, previous, next } = yield call(API.getPeople, page);
+  yield put(setPeople(results, previous, next));
 }
 
 function* getPersonWorker(action: GetPerson) {
