@@ -26,6 +26,7 @@ module.exports = {
     'import/no-unresolved': 'off',
     'camelcase': 'off',
     'no-return-await': 'off',
-    'react/prop-types': 'off'
+    'react/prop-types': 'off',
+    'no-shadow': 'off'
   }
 };
