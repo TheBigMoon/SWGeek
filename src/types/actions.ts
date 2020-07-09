@@ -4,15 +4,15 @@ import {
   GET_PEOPLE,
   GET_PERSON,
   GET_STARSHIP,
-  GET_STARSHIPS,
+  GET_STARSHIPS, GET_VEHICLE, GET_VEHICLES,
   SET_FILM,
   SET_FILMS,
   SET_PEOPLE,
   SET_PERSON,
   SET_STARSHIP,
-  SET_STARSHIPS
+  SET_STARSHIPS, SET_VEHICLE, SET_VEHICLES
 } from '../redux/actions/actions';
-import { Film, Person, Starship } from './entities/entities';
+import {Film, Person, Starship, Vehicle} from './entities/entities';
 
 export type PeopleActionType = SetPeople | SetPerson
 
@@ -34,3 +34,10 @@ export interface GetStarships {type: typeof GET_STARSHIPS}
 export interface SetStarships {type: typeof SET_STARSHIPS, starships: Array<Starship>}
 export interface GetStarship {type: typeof GET_STARSHIP, starshipId: number}
 export interface SetStarship {type: typeof SET_STARSHIP, starship: Starship}
+
+export type VehiclesActionType = SetVehicles | SetVehicle
+
+export interface GetVehicles {type: typeof GET_VEHICLES}
+export interface SetVehicles {type: typeof SET_VEHICLES, vehicles: Array<Vehicle>}
+export interface GetVehicle {type: typeof GET_VEHICLE, vehicleId: number}
+export interface SetVehicle {type: typeof SET_VEHICLE, vehicle: Vehicle}
