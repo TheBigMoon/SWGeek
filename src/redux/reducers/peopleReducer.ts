@@ -4,7 +4,9 @@ import { SET_PEOPLE, SET_PERSON } from '../../constants/actionTypeConstants';
 
 const initialState: PeopleStore = {
   people: null,
-  person: null
+  person: null,
+  prevPage: null,
+  nextPage: null
 };
 
 const peopleReducer = (state = initialState, action: PeopleActionType): PeopleStore => {
@@ -12,7 +14,9 @@ const peopleReducer = (state = initialState, action: PeopleActionType): PeopleSt
     case SET_PEOPLE: {
       return {
         ...state,
-        people: [...action.people]
+        people: [...action.people],
+        prevPage: action.prevPage,
+        nextPage: action.nextPage
       };
     }
     case SET_PERSON: {

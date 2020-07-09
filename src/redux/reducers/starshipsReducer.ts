@@ -4,7 +4,9 @@ import { SET_STARSHIP, SET_STARSHIPS } from '../../constants/actionTypeConstants
 
 const initialState: StarhipsStore = {
   starships: null,
-  starship: null
+  starship: null,
+  prevPage: null,
+  nextPage: null
 };
 
 const starshipsReducer = (state = initialState, action: StarshipsActionType): StarhipsStore => {
@@ -12,7 +14,9 @@ const starshipsReducer = (state = initialState, action: StarshipsActionType): St
     case SET_STARSHIPS: {
       return {
         ...state,
-        starships: [...action.starships]
+        starships: [...action.starships],
+        prevPage: action.prevPage,
+        nextPage: action.nextPage
       };
     }
     case SET_STARSHIP: {

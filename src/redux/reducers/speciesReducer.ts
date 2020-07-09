@@ -4,7 +4,9 @@ import { SET_RACE, SET_SPECIES } from '../../constants/actionTypeConstants';
 
 const initialState: SpeciesStore = {
   species: null,
-  race: null
+  race: null,
+  prevPage: null,
+  nextPage: null
 };
 
 const speciesReducer = (state = initialState, action: SpeciesActionType): SpeciesStore => {
@@ -12,7 +14,9 @@ const speciesReducer = (state = initialState, action: SpeciesActionType): Specie
     case SET_SPECIES: {
       return {
         ...state,
-        species: [...action.species]
+        species: [...action.species],
+        prevPage: action.prevPage,
+        nextPage: action.nextPage
       };
     }
     case SET_RACE: {

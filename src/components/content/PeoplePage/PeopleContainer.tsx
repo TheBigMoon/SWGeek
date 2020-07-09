@@ -4,19 +4,26 @@ import { App } from '../../../redux/store';
 import { Person } from '../../../types/entities/entities';
 import { getPeople } from '../../../redux/actions/actions';
 import PersonItem from './PersonItem';
+import Paginator from '../common/Paginator';
 
 interface StateToProps {
-  people: Array<Person> | null
+  people: Array<Person> | null,
+  prevPage: string | null,
+  nextPage: string | null
 }
 
 interface DispatchToProps {
-  getPeople: () => void
+  getPeople: (page: string) => void
 }
 
-const PeopleContainer: React.FC<StateToProps & DispatchToProps> = ({ people, getPeople }) => {
+const PeopleContainer: React.FC<StateToProps & DispatchToProps> = (
+  {
+    people, prevPage, nextPage, getPeople
+  }
+) => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getPeople());
+    dispatch(getPeople(''));
   }, [dispatch, getPeople]);
   const allPeople = people?.map((p) => <PersonItem person={p} />);
   return (
@@ -25,12 +32,15 @@ const PeopleContainer: React.FC<StateToProps & DispatchToProps> = ({ people, get
       <div>
         {allPeople}
       </div>
+      <Paginator prevPage={prevPage} nextPage={nextPage} getContent={getPeople} />
     </div>
   );
 };
 
 const MapStateToProps = (state: App): StateToProps => ({
-  people: state.peoplePage.people
+  people: state.peoplePage.people,
+  prevPage: state.peoplePage.prevPage,
+  nextPage: state.peoplePage.nextPage
 });
 
 export default connect<StateToProps, DispatchToProps, {}, App>(

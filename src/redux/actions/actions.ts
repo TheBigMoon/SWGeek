@@ -47,43 +47,75 @@ import {
 } from '../../types/actions/planetsActionTypes';
 
 // PEOPLE ACTIONS
-export const getPeople = (): GetPeople => ({ type: GET_PEOPLE });
-export const setPeople = (people: Array<Person>): SetPeople => ({ type: SET_PEOPLE, people });
+export const getPeople = (page: string): GetPeople => ({ type: GET_PEOPLE, page });
+export const setPeople = (
+  people: Array<Person>, prevPage: string | null, nextPage: string | null
+): SetPeople => ({
+  type: SET_PEOPLE, people, prevPage, nextPage
+});
 export const getPerson = (personId: number): GetPerson => ({ type: GET_PERSON, personId });
 export const setPerson = (person: Person): SetPerson => ({ type: SET_PERSON, person });
 
 // FILMS ACTIONS
-export const getFilms = (): GetFilms => ({ type: GET_FILMS });
-export const setFilms = (films: Array<Film>): SetFilms => ({ type: SET_FILMS, films });
+export const getFilms = (page: string): GetFilms => ({ type: GET_FILMS, page });
+export const setFilms = (
+  films: Array<Film>,
+  prevPage: string | null,
+  nextPage: string | null
+): SetFilms => ({
+  type: SET_FILMS, films, prevPage, nextPage
+});
 export const getFilm = (filmId: number): GetFilm => ({ type: GET_FILM, filmId });
 export const setFilm = (film: Film): SetFilm => ({ type: SET_FILM, film });
 
 // STARSHIPS ACTIONS
-export const getStarships = (): GetStarships => ({ type: GET_STARSHIPS });
-export const setStarships = (starships: Array<Starship>): SetStarships => (
-  { type: SET_STARSHIPS, starships }
-);
+export const getStarships = (page: string): GetStarships => ({ type: GET_STARSHIPS, page });
+export const setStarships = (
+  starships: Array<Starship>,
+  prevPage: string | null,
+  nextPage: string | null
+): SetStarships => {
+  return {
+    type: SET_STARSHIPS, starships, prevPage, nextPage
+  };
+};
 export const getStarship = (starshipId: number): GetStarship => (
   { type: GET_STARSHIP, starshipId }
 );
 export const setStarship = (starship: Starship): SetStarship => ({ type: SET_STARSHIP, starship });
 
 // VEHICLES ACTIONS
-export const getVehicles = (): GetVehicles => ({ type: GET_VEHICLES });
-export const setVehicles = (vehicles: Array<Vehicle>): SetVehicles => (
-  { type: SET_VEHICLES, vehicles }
-);
+export const getVehicles = (page: string): GetVehicles => ({ type: GET_VEHICLES, page });
+export const setVehicles = (
+  vehicles: Array<Vehicle>,
+  prevPage: string | null,
+  nextPage: string | null
+): SetVehicles => ({
+  type: SET_VEHICLES, vehicles, prevPage, nextPage
+});
 export const getVehicle = (vehicleId: number): GetVehicle => ({ type: GET_VEHICLE, vehicleId });
 export const setVehicle = (vehicle: Vehicle): SetVehicle => ({ type: SET_VEHICLE, vehicle });
 
 // SPECIES ACTIONS
-export const getSpecies = (): GetSpecies => ({ type: GET_SPECIES });
-export const setSpecies = (species: Array<Race>): SetSpecies => ({ type: SET_SPECIES, species });
+export const getSpecies = (page: string): GetSpecies => ({ type: GET_SPECIES, page });
+export const setSpecies = (
+  species: Array<Race>,
+  prevPage: string | null,
+  nextPage: string | null
+): SetSpecies => ({
+  type: SET_SPECIES, species, prevPage, nextPage
+});
 export const getRace = (raceId: number): GetRace => ({ type: GET_RACE, raceId });
 export const setRace = (race: Race): SetRace => ({ type: SET_RACE, race });
 
 // PLANETS ACTIONS
-export const getPlanets = (): GetPlanets => ({ type: GET_PLANETS });
-export const setPlanets = (planets: Array<Planet>): SetPlanets => ({ type: SET_PLANETS, planets });
+export const getPlanets = (page: string): GetPlanets => ({ type: GET_PLANETS, page });
+export const setPlanets = (
+  planets: Array<Planet>,
+  prevPage: string | null,
+  nextPage: string | null
+): SetPlanets => ({
+  type: SET_PLANETS, planets, prevPage, nextPage
+});
 export const getPlanet = (planetId: number): GetPlanet => ({ type: GET_PLANET, planetId });
 export const setPlanet = (planet: Planet): SetPlanet => ({ type: SET_PLANET, planet });

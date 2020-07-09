@@ -7,7 +7,7 @@ import {
   GET_STARSHIP,
   GET_STARSHIPS, GET_VEHICLE, GET_VEHICLES
 } from '../constants/actionTypeConstants';
-import { GetPerson } from '../types/actions/peopleActionsTypes';
+import { GetPeople, GetPerson } from '../types/actions/peopleActionsTypes';
 import API from '../api/api';
 import {
   setFilm,
@@ -22,15 +22,16 @@ import {
   setVehicle,
   setVehicles
 } from '../redux/actions/actions';
-import { GetFilm } from '../types/actions/filmsActionsTypes';
-import { GetStarship } from '../types/actions/starshipsActionsTypes';
-import { GetVehicle } from '../types/actions/vehiclesActionTypes';
-import { GetRace } from '../types/actions/speciesActionTypes';
-import { GetPlanet } from '../types/actions/planetsActionTypes';
+import { GetFilm, GetFilms } from '../types/actions/filmsActionsTypes';
+import { GetStarship, GetStarships } from '../types/actions/starshipsActionsTypes';
+import { GetVehicle, GetVehicles } from '../types/actions/vehiclesActionTypes';
+import { GetRace, GetSpecies } from '../types/actions/speciesActionTypes';
+import { GetPlanet, GetPlanets } from '../types/actions/planetsActionTypes';
 
-function* getPeopleWorker() {
-  const people = yield call(API.getPeople);
-  yield put(setPeople(people));
+function* getPeopleWorker(action: GetPeople) {
+  const { page } = action;
+  const { results, previous, next } = yield call(API.getPeople, page);
+  yield put(setPeople(results, previous, next));
 }
 
 function* getPersonWorker(action: GetPerson) {
@@ -39,9 +40,10 @@ function* getPersonWorker(action: GetPerson) {
   yield put(setPerson(person));
 }
 
-function* getFilmsWorker() {
-  const films = yield call(API.getFilms);
-  yield put(setFilms(films));
+function* getFilmsWorker(action: GetFilms) {
+  const { page } = action;
+  const { results, previous, next } = yield call(API.getFilms, page);
+  yield put(setFilms(results, previous, next));
 }
 
 function* getFilmWorker(action: GetFilm) {
@@ -50,9 +52,10 @@ function* getFilmWorker(action: GetFilm) {
   yield put(setFilm(film));
 }
 
-function* getStarshipsWorker() {
-  const starships = yield call(API.getStarships);
-  yield put(setStarships(starships));
+function* getStarshipsWorker(action: GetStarships) {
+  const { page } = action;
+  const { results, previous, next } = yield call(API.getStarships, page);
+  yield put(setStarships(results, previous, next));
 }
 
 function* getStarshipWorker(action: GetStarship) {
@@ -61,9 +64,10 @@ function* getStarshipWorker(action: GetStarship) {
   yield put(setStarship(starship));
 }
 
-function* getVehiclesWorker() {
-  const vehicles = yield call(API.getVehicles);
-  yield put(setVehicles(vehicles));
+function* getVehiclesWorker(action: GetVehicles) {
+  const { page } = action;
+  const { results, previous, next } = yield call(API.getVehicles, page);
+  yield put(setVehicles(results, previous, next));
 }
 
 function* getVehicleWorker(action: GetVehicle) {
@@ -72,9 +76,10 @@ function* getVehicleWorker(action: GetVehicle) {
   yield put(setVehicle(vehicle));
 }
 
-function* getSpeciesWorker() {
-  const species = yield call(API.getSpecies);
-  yield put(setSpecies(species));
+function* getSpeciesWorker(action: GetSpecies) {
+  const { page } = action;
+  const { results, previous, next } = yield call(API.getSpecies, page);
+  yield put(setSpecies(results, previous, next));
 }
 
 function* getRaceWorker(action: GetRace) {
@@ -83,9 +88,10 @@ function* getRaceWorker(action: GetRace) {
   yield put(setRace(race));
 }
 
-function* getPlanetsWorker() {
-  const planets = yield call(API.getPlanets);
-  yield put(setPlanets(planets));
+function* getPlanetsWorker(action: GetPlanets) {
+  const { page } = action;
+  const { results, previous, next } = yield call(API.getPlanets, page);
+  yield put(setPlanets(results, previous, next));
 }
 
 function* getPlanetWorker(action: GetPlanet) {
