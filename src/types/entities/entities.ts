@@ -74,7 +74,7 @@ export interface Vehicle {
   url: string
 }
 
-export interface Species {
+export interface Race {
   name: string,
   classification: string,
   designation: string,
