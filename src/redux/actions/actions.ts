@@ -1,32 +1,22 @@
 import {
-  GetFilm,
-  GetFilms,
-  GetPeoples,
-  GetPerson,
-  GetPlanet,
-  GetPlanets,
-  GetRace,
-  GetSpecies,
-  GetStarship,
-  GetStarships,
-  GetVehicle,
-  GetVehicles,
-  SetFilm,
-  SetFilms,
-  SetPeople,
-  SetPerson,
-  SetPlanet,
-  SetPlanets,
-  SetRace,
-  SetSpecies,
-  SetStarship,
-  SetStarships,
-  SetVehicle,
-  SetVehicles
-} from '../../types/actions';
-import {
   Film, Person, Planet, Race, Starship, Vehicle
 } from '../../types/entities/entities';
+import {
+  GetPeoples, GetPerson, SetPeople, SetPerson
+} from '../../types/actions/peopleActionsTypes';
+import {
+  GetFilm, GetFilms, SetFilm, SetFilms
+} from '../../types/actions/filmsActionsTypes';
+import {
+  GetStarship, GetStarships, SetStarship, SetStarships
+} from '../../types/actions/starshipsActionsTypes';
+import {
+  GetVehicle, GetVehicles, SetVehicle, SetVehicles
+} from '../../types/actions/vehiclesActionTypes';
+import {
+  GetRace, GetSpecies, SetRace, SetSpecies
+} from '../../types/actions/speciesActionTypes';
+import {GetPlanet, GetPlanets, SetPlanet, SetPlanets} from '../../types/actions/planetsActionTypes';
 
 export const GET_PEOPLE = 'GET_PEOPLE';
 export const SET_PEOPLE = 'SET_PEOPLE';
