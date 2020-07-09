@@ -1,6 +1,6 @@
 import React from 'react';
 import { Vehicle } from '../../../types/entities/entities';
-import InfoBlock from '../infoBlock/InfoBlock';
+import InfoBlock from '../common/InfoBlock';
 
 interface VehicleProps {
   vehicle: Vehicle | null
