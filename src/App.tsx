@@ -26,7 +26,7 @@ function App() {
       <Route exact path="/vehicles" render={() => <VehiclesContainer />} />
       <Route exact path="/vehicles/:vehicleId" render={() => <VehicleContainer />} />
       <Route exact path="/species" render={() => <SpeciesContainer />} />
-      <Route exact path="/vehicles/:raceId" render={() => <RaceContainer />} />
+      <Route exact path="/species/:raceId" render={() => <RaceContainer />} />
       <Route exact path="/planets">
         Planets
       </Route>
