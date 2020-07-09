@@ -1,17 +1,12 @@
 import React from 'react';
 import { Film } from '../../../types/entities/entities';
+import InfoBlock from '../infoBlock/InfoBlock';
 
 interface FilmProps {
   film: Film | null
 }
 
 const FilmItem: React.FC<FilmProps> = ({ film }) => {
-  const characters = film?.characters.map((character) => <div>{character}</div>);
-  const planets = film?.planets.map((planet) => <div>{planet}</div>);
-  const starships = film?.starships.map((starship) => <div>{starship}</div>);
-  const vehicles = film?.vehicles.map((vehicle) => <div>{vehicle}</div>);
-  const species = film?.species.map((race) => <div>{race}</div>);
-
   return (
     <div>
       <div>{film?.title}</div>
@@ -34,26 +29,11 @@ const FilmItem: React.FC<FilmProps> = ({ film }) => {
       <div>
         {`Release date: ${film?.release_date}`}
       </div>
-      <div>
-        <p>Characters:</p>
-        {characters}
-      </div>
-      <div>
-        <p>Planets:</p>
-        {planets}
-      </div>
-      <div>
-        <p>Starships:</p>
-        {starships}
-      </div>
-      <div>
-        <p>Vehicles:</p>
-        {vehicles}
-      </div>
-      <div>
-        <p>Species:</p>
-        {species}
-      </div>
+      <InfoBlock links={film?.characters} linksName="People" name="Characters" />
+      <InfoBlock links={film?.planets} linksName="Planet" name="Planets" />
+      <InfoBlock links={film?.starships} linksName="Starship" name="Starships" />
+      <InfoBlock links={film?.vehicles} linksName="Vehicle" name="Vehicles" />
+      <InfoBlock links={film?.planets} linksName="Race" name="Species" />
     </div>
   );
 };
