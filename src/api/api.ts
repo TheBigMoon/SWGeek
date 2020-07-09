@@ -22,15 +22,15 @@ const API = {
       .then((response) => response.data);
   },
   async getStarships() {
-    return await instance.get('starships')
-      .then((response) => response.data);
+    return await instance.get('starships/')
+      .then((response) => response.data.results);
   },
   async getStarship(starshipId: number) {
     return await instance.get(`starships/${starshipId}/`)
-      .then((response) => response.data);
+      .then((response) => response.data.results);
   },
   async getVehicles() {
-    return await instance.get('vehicles')
+    return await instance.get('vehicles/')
       .then((response) => response.data);
   },
   async getVehicle(vehicleId: number) {
@@ -38,7 +38,7 @@ const API = {
       .then((response) => response.data);
   },
   async getSpecies() {
-    return await instance.get('species')
+    return await instance.get('species/')
       .then((response) => response.data);
   },
   async getRace(raceId: number) {
@@ -46,7 +46,7 @@ const API = {
       .then((response) => response.data);
   },
   async getPlanets() {
-    return await instance.get('planets')
+    return await instance.get('planets/')
       .then((response) => response.data);
   },
   async getPlanet(planetId: number) {
