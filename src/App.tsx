@@ -6,6 +6,8 @@ import FilmsContainer from './components/content/FilmsPage/FilmsContainer';
 import FilmContainer from './components/content/FilmsPage/FilmContainer';
 import PeopleContainer from './components/content/PeoplePage/PeopleContainer';
 import PersonContainer from './components/content/PeoplePage/PersonContainer';
+import StarshipsContainer from './components/content/StarshipsPage/StarshipsContainer';
+import StarshipContainer from './components/content/StarshipsPage/StarshipContainer';
 
 function App() {
   return (
@@ -15,9 +17,8 @@ function App() {
       <Route exact path="/films/:filmId" render={() => <FilmContainer />} />
       <Route exact path="/people" render={() => <PeopleContainer />} />
       <Route exact path="/people/:personId" render={() => <PersonContainer />} />
-      <Route exact path="/starships">
-        Starships
-      </Route>
+      <Route exact path="/starships" render={() => <StarshipsContainer />} />
+      <Route exact path="/starships/:starshipId" render={() => <StarshipContainer />} />
       <Route exact path="/vehicles">
         Vehicles
       </Route>

@@ -27,7 +27,7 @@ const API = {
   },
   async getStarship(starshipId: number) {
     return await instance.get(`starships/${starshipId}/`)
-      .then((response) => response.data.results);
+      .then((response) => response.data);
   },
   async getVehicles() {
     return await instance.get('vehicles/')
