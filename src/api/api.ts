@@ -31,7 +31,7 @@ const API = {
   },
   async getVehicles() {
     return await instance.get('vehicles/')
-      .then((response) => response.data);
+      .then((response) => response.data.results);
   },
   async getVehicle(vehicleId: number) {
     return await instance.get(`vehicles/${vehicleId}/`)

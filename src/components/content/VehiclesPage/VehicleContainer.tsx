@@ -1,0 +1,40 @@
+import React, { useEffect } from 'react';
+import { connect, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { App } from '../../../redux/store';
+import { Vehicle } from '../../../types/entities/entities';
+import { getVehicle } from '../../../redux/actions/actions';
+import VehicleItem from './VehicleItem';
+
+interface StateToProps {
+  vehicle: Vehicle | null
+}
+
+interface DispatchToProps {
+  getVehicle: (vehicleId: number) => void
+}
+
+const VehicleContainer: React.FC<StateToProps & DispatchToProps> = ({ vehicle, getVehicle }) => {
+  const { vehicleId } = useParams();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getVehicle(vehicleId));
+  }, [dispatch, getVehicle, vehicleId]);
+  // eslint-disable-next-line no-debugger
+  debugger;
+  return (
+    <div>
+      <VehicleItem vehicle={vehicle} />
+    </div>
+  );
+};
+
+const MapStateToProps = (state: App): StateToProps => ({
+  vehicle: state.vehiclesPage.vehicle
+});
+
+export default connect<StateToProps, DispatchToProps, {}, App>(
+  MapStateToProps, {
+    getVehicle
+  }
+)(VehicleContainer);
