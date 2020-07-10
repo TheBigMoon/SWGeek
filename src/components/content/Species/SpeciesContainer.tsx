@@ -38,6 +38,7 @@ const SpeciesContainer: React.FC<StateToProps & DispatchToProps> = (
       <PageTitle>
         Species
       </PageTitle>
+      <Paginator prevPage={prevPage} nextPage={nextPage} getContent={getSpecies} />
       {allSpecies}
       <Paginator prevPage={prevPage} nextPage={nextPage} getContent={getSpecies} />
     </div>

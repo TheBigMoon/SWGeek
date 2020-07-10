@@ -38,6 +38,7 @@ const VehiclesContainer: React.FC<StateToProps & DispatchToProps> = (
       <PageTitle>
         Vehicles
       </PageTitle>
+      <Paginator prevPage={prevPage} nextPage={nextPage} getContent={getVehicles} />
       {allVehicles}
       <Paginator prevPage={prevPage} nextPage={nextPage} getContent={getVehicles} />
     </div>

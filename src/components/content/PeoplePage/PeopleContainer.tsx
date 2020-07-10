@@ -38,6 +38,7 @@ const PeopleContainer: React.FC<StateToProps & DispatchToProps> = (
       <PageTitle>
         People
       </PageTitle>
+      <Paginator prevPage={prevPage} nextPage={nextPage} getContent={getPeople} />
       {allPeople}
       <Paginator prevPage={prevPage} nextPage={nextPage} getContent={getPeople} />
     </div>
