@@ -22,7 +22,7 @@ const PlanetContainer: React.FC<StateToProps & DispatchToProps> = ({ planet, get
   }, [dispatch, getPlanet, planetId]);
   return (
     <div>
-      <PlanetItem planet={planet} />
+      <PlanetItem showLink={false} showInfoBlocks planet={planet} />
     </div>
   );
 };
