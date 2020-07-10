@@ -4,7 +4,7 @@ import { App } from '../../../redux/store';
 import { Film } from '../../../types/entities/entities';
 import FilmItem from './FilmItem';
 import { getFilms } from '../../../redux/actions/actions';
-import {PageTitle} from "../../../styledComponents/common/common";
+import { PageTitle } from '../../../styledComponents/common/common';
 
 interface StateToProps {
   films: Array<Film> | null
