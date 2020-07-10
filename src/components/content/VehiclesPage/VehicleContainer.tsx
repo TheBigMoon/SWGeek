@@ -22,7 +22,7 @@ const VehicleContainer: React.FC<StateToProps & DispatchToProps> = ({ vehicle, g
   }, [dispatch, getVehicle, vehicleId]);
   return (
     <div>
-      <VehicleItem vehicle={vehicle} />
+      <VehicleItem showLink={false} showInfoBlocks vehicle={vehicle} />
     </div>
   );
 };
