@@ -17,19 +17,17 @@ const PersonItem: React.FC<PersonProps> = ({ person, showLink, showInfoBlocks })
   const homeworldPage = person?.homeworld.replace('http://swapi.dev/api', '') || '/peoples';
   return (
     <PageItem>
-      <div>
-        {showLink
-          ? (
-            <LinkItem exact to={`/people/${person?.url.replace(/\D/g, '')}`}>
-              {person?.name}
-            </LinkItem>
-          )
-          : (
-            <ItemTitle>
-              {person?.name}
-            </ItemTitle>
-          )}
-      </div>
+      {showLink
+        ? (
+          <LinkItem exact to={`/people/${person?.url.replace(/\D/g, '')}`}>
+            {person?.name}
+          </LinkItem>
+        )
+        : (
+          <ItemTitle>
+            {person?.name}
+          </ItemTitle>
+        )}
       <InfoLine>
         <ItemH2>Height:</ItemH2>
         <InfoProp>{person?.height}</InfoProp>
