@@ -4,6 +4,7 @@ import { App } from '../../../redux/store';
 import { Film } from '../../../types/entities/entities';
 import FilmItem from './FilmItem';
 import { getFilms } from '../../../redux/actions/actions';
+import {PageTitle} from "../../../styledComponents/common/common";
 
 interface StateToProps {
   films: Array<Film> | null
@@ -18,10 +19,12 @@ const FilmsContainer: React.FC<StateToProps & DispatchToProps> = ({ films, getFi
   useEffect(() => {
     dispatch(getFilms(''));
   }, [dispatch, getFilms]);
-  const allFilms = films?.map((film) => <FilmItem film={film} />);
+  const allFilms = films?.map((film) => <FilmItem showInfoBlocks={false} showLink film={film} />);
   return (
     <div>
-      Films
+      <PageTitle>
+        Films
+      </PageTitle>
       {allFilms}
     </div>
   );
