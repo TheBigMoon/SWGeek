@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { PageButton, StyledPaginator } from '../../../styledComponents/common/StyledPaginator';
 
 interface PaginatorProps {
   prevPage: string | null,
@@ -8,25 +9,25 @@ interface PaginatorProps {
 }
 const Paginator: React.FC<PaginatorProps> = ({ prevPage, nextPage, getContent }) => {
   const dispatch = useDispatch();
+  const prev = prevPage || '';
+  const next = nextPage || '';
   return (
-    <div>
-      {
+    <StyledPaginator>
+      <PageButton
+        disabled={!prev}
+        marginRight
+        onClick={() => dispatch(getContent(prev.replace(/http:\/\/swapi\.dev\/api\/.+\//g, '')))}
+      >
         prevPage
-          ? (
-            <button onClick={() => dispatch(getContent(prevPage?.replace(/http:\/\/swapi\.dev\/api\/.+\//g, '')))}>
-              prevPage
-            </button>
-          ) : null
-      }
-      {
+      </PageButton>
+      <PageButton
+        disabled={!next}
+        marginRight={false}
+        onClick={() => dispatch(getContent(next.replace(/http:\/\/swapi\.dev\/api\/.+\//g, '')))}
+      >
         nextPage
-          ? (
-            <button onClick={() => dispatch(getContent(nextPage?.replace(/http:\/\/swapi\.dev\/api\/.+\//g, '')))}>
-              nextPage
-            </button>
-          ) : null
-      }
-    </div>
+      </PageButton>
+    </StyledPaginator>
   );
 };
 
