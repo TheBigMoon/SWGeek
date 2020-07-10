@@ -22,7 +22,7 @@ const FilmContainer: React.FC<StateToProps & DispatchToProps> = ({ film, getFilm
   }, [getFilm, filmId, dispatch]);
   return (
     <div>
-      <FilmItem film={film} />
+      <FilmItem showInfoBlocks showLink={false} film={film} />
     </div>
   );
 };
