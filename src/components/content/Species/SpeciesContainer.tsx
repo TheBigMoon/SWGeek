@@ -5,6 +5,7 @@ import { Race } from '../../../types/entities/entities';
 import { getSpecies } from '../../../redux/actions/actions';
 import RaceItem from './RaceItem';
 import Paginator from '../common/Paginator';
+import { PageTitle } from '../../../styledComponents/common/common';
 
 interface StateToProps {
   species: Array<Race> | null,
@@ -25,13 +26,19 @@ const SpeciesContainer: React.FC<StateToProps & DispatchToProps> = (
   useEffect(() => {
     dispatch(getSpecies(''));
   }, [dispatch, getSpecies]);
-  const allSpecies = species?.map((race) => <RaceItem race={race} />);
+  const allSpecies = species?.map((race) => (
+    <RaceItem
+      race={race}
+      showInfoBlocks={false}
+      showLink
+    />
+  ));
   return (
     <div>
-      Species
-      <div>
-        {allSpecies}
-      </div>
+      <PageTitle>
+        Species
+      </PageTitle>
+      {allSpecies}
       <Paginator prevPage={prevPage} nextPage={nextPage} getContent={getSpecies} />
     </div>
   );
