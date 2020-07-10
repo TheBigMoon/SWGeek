@@ -1,27 +1,28 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import StyledHeader from '../styledComponents/Header';
+import { LinkItem } from '../styledComponents/common/common';
 
 const Header = () => (
-  <div>
-    <NavLink exact to="/films">
+  <StyledHeader>
+    <LinkItem exact to="/films">
       Films
-    </NavLink>
-    <NavLink exact to="/people">
+    </LinkItem>
+    <LinkItem exact to="/people">
       People
-    </NavLink>
-    <NavLink exact to="/starships">
+    </LinkItem>
+    <LinkItem exact to="/starships">
       Starships
-    </NavLink>
-    <NavLink exact to="/vehicles">
+    </LinkItem>
+    <LinkItem exact to="/vehicles">
       Vehicles
-    </NavLink>
-    <NavLink exact to="/species">
+    </LinkItem>
+    <LinkItem exact to="/species">
       Species
-    </NavLink>
-    <NavLink exact to="/planets">
+    </LinkItem>
+    <LinkItem exact to="/planets">
       Planets
-    </NavLink>
-  </div>
+    </LinkItem>
+  </StyledHeader>
 );
 
 export default Header;
