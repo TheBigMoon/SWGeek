@@ -5,6 +5,7 @@ import { Person } from '../../../types/entities/entities';
 import { getPeople } from '../../../redux/actions/actions';
 import PersonItem from './PersonItem';
 import Paginator from '../common/Paginator';
+import { PageTitle } from '../../../styledComponents/common/common';
 
 interface StateToProps {
   people: Array<Person> | null,
@@ -25,13 +26,19 @@ const PeopleContainer: React.FC<StateToProps & DispatchToProps> = (
   useEffect(() => {
     dispatch(getPeople(''));
   }, [dispatch, getPeople]);
-  const allPeople = people?.map((p) => <PersonItem person={p} />);
+  const allPeople = people?.map((person) => (
+    <PersonItem
+      showInfoBlocks={false}
+      showLink
+      person={person}
+    />
+  ));
   return (
     <div>
-      People
-      <div>
-        {allPeople}
-      </div>
+      <PageTitle>
+        People
+      </PageTitle>
+      {allPeople}
       <Paginator prevPage={prevPage} nextPage={nextPage} getContent={getPeople} />
     </div>
   );
