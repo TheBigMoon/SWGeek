@@ -22,7 +22,7 @@ const PersonContainer: React.FC<StateToProps & DispatchToProps> = ({ person, get
   }, [dispatch, getPerson, personId]);
   return (
     <div>
-      <PersonItem person={person} />
+      <PersonItem showInfoBlocks showLink={false} person={person} />
     </div>
   );
 };

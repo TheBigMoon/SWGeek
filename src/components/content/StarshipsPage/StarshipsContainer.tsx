@@ -5,6 +5,7 @@ import { Starship } from '../../../types/entities/entities';
 import { getStarships } from '../../../redux/actions/actions';
 import StarshipItem from './StarshipItem';
 import Paginator from '../common/Paginator';
+import { PageTitle } from '../../../styledComponents/common/common';
 
 interface StateToProps {
   starships: Array<Starship> | null,
@@ -25,13 +26,19 @@ const StarshipsContainer: React.FC<StateToProps & DispatchToProps> = (
   useEffect(() => {
     dispatch(getStarships(''));
   }, [dispatch, getStarships]);
-  const allStarships = starships?.map((starship) => <StarshipItem starship={starship} />);
+  const allStarships = starships?.map((starship) => (
+    <StarshipItem
+      starship={starship}
+      showLink
+      showInfoBlocks={false}
+    />
+  ));
   return (
     <div>
-      Starships
-      <div>
-        {allStarships}
-      </div>
+      <PageTitle>
+        Starships
+      </PageTitle>
+      {allStarships}
       <Paginator prevPage={prevPage} nextPage={nextPage} getContent={getStarships} />
     </div>
   );

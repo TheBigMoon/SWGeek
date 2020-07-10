@@ -5,6 +5,7 @@ import { Planet } from '../../../types/entities/entities';
 import { getPlanets } from '../../../redux/actions/actions';
 import PlanetItem from './PlanetItem';
 import Paginator from '../common/Paginator';
+import {PageTitle} from "../../../styledComponents/common/common";
 
 interface StateToProps {
   planets: Array<Planet> | null,
@@ -25,13 +26,19 @@ const PlanetsContainer: React.FC<StateToProps & DispatchToProps> = (
   useEffect(() => {
     dispatch(getPlanets(''));
   }, [dispatch, getPlanets]);
-  const allPlanets = planets?.map((planet) => <PlanetItem planet={planet} />);
+  const allPlanets = planets?.map((planet) => (
+    <PlanetItem
+      planet={planet}
+      showLink
+      showInfoBlocks={false}
+    />
+  ));
   return (
     <div>
-      Planets
-      <div>
-        {allPlanets}
-      </div>
+      <PageTitle>
+        Planets
+      </PageTitle>
+      {allPlanets}
       <Paginator prevPage={prevPage} nextPage={nextPage} getContent={getPlanets} />
     </div>
   );

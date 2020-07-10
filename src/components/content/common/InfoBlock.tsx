@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { InfoName, StyledInfoBLock } from '../../../styledComponents/StyledInfoBLock';
+import { FlexBox } from '../../../styledComponents/common/common';
 
 interface InfoBlockProps {
   links: Array<string> | undefined,
@@ -9,23 +11,25 @@ interface InfoBlockProps {
 
 const InfoBlock: React.FC<InfoBlockProps> = ({ links, linksName, name }) => {
   const [showLinks, toggleLinks] = useState(false);
-
-  let counter = 1;
-  const allLinks = links?.length ? links?.map((link) => (
-    <div>
-      <NavLink exact to={link.replace('http://swapi.dev/api', '')}>
-        {`${linksName} ${counter++}`}
+  const mappedLinks = links?.map((link) => {
+    const page = link.replace('http://swapi.dev/api', '');
+    const pageNumber = page.replace(/\D/g, '');
+    return (
+      <NavLink exact to={page}>
+        {`${linksName} ${pageNumber}`}
       </NavLink>
-    </div>
-  ))
-    : <div>No links</div>;
+    );
+  });
+  const allLinks = links?.length ? mappedLinks : <div>No links</div>;
   return (
-    <div>
-      <div onClick={() => toggleLinks(!showLinks)} role="presentation">
+    <StyledInfoBLock>
+      <InfoName onClick={() => toggleLinks(!showLinks)} role="presentation">
         {showLinks ? `Hide ${name}` : `Show ${name}`}
-      </div>
-      {showLinks ? (<div>{allLinks}</div>) : null}
-    </div>
+      </InfoName>
+      <FlexBox>
+        {showLinks ? allLinks : null}
+      </FlexBox>
+    </StyledInfoBLock>
   );
 };
 export default InfoBlock;

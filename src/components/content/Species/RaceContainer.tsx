@@ -22,7 +22,7 @@ const RaceContainer: React.FC<StateToProps & DispatchToProps> = ({ race, getRace
   }, [dispatch, getRace, raceId]);
   return (
     <div>
-      <RaceItem race={race} />
+      <RaceItem showLink={false} showInfoBlocks race={race} />
     </div>
   );
 };

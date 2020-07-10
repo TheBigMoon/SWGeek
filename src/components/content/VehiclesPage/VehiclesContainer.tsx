@@ -5,6 +5,7 @@ import { Vehicle } from '../../../types/entities/entities';
 import { getVehicles } from '../../../redux/actions/actions';
 import VehicleItem from './VehicleItem';
 import Paginator from '../common/Paginator';
+import { PageTitle } from '../../../styledComponents/common/common';
 
 interface StateToProps {
   vehicles: Array<Vehicle> | null,
@@ -25,13 +26,19 @@ const VehiclesContainer: React.FC<StateToProps & DispatchToProps> = (
   useEffect(() => {
     dispatch(getVehicles(''));
   }, [dispatch, getVehicles]);
-  const allVehicles = vehicles?.map((vehicle) => <VehicleItem vehicle={vehicle} />);
+  const allVehicles = vehicles?.map((vehicle) => (
+    <VehicleItem
+      showInfoBlocks={false}
+      showLink
+      vehicle={vehicle}
+    />
+  ));
   return (
     <div>
-      Vehicles
-      <div>
-        {allVehicles}
-      </div>
+      <PageTitle>
+        Vehicles
+      </PageTitle>
+      {allVehicles}
       <Paginator prevPage={prevPage} nextPage={nextPage} getContent={getVehicles} />
     </div>
   );

@@ -14,23 +14,26 @@ import SpeciesContainer from './components/content/Species/SpeciesContainer';
 import RaceContainer from './components/content/Species/RaceContainer';
 import PlanetsContainer from './components/content/PlanetsPage/PlanetsContainer';
 import PlanetContainer from './components/content/PlanetsPage/PlanetContainer';
+import { Content } from './styledComponents/common/common';
 
 function App() {
   return (
     <>
       <Header />
-      <Route exact path="/films" render={() => <FilmsContainer />} />
-      <Route exact path="/films/:filmId" render={() => <FilmContainer />} />
-      <Route exact path="/people" render={() => <PeopleContainer />} />
-      <Route exact path="/people/:personId" render={() => <PersonContainer />} />
-      <Route exact path="/starships" render={() => <StarshipsContainer />} />
-      <Route exact path="/starships/:starshipId" render={() => <StarshipContainer />} />
-      <Route exact path="/vehicles" render={() => <VehiclesContainer />} />
-      <Route exact path="/vehicles/:vehicleId" render={() => <VehicleContainer />} />
-      <Route exact path="/species" render={() => <SpeciesContainer />} />
-      <Route exact path="/species/:raceId" render={() => <RaceContainer />} />
-      <Route exact path="/planets" render={() => <PlanetsContainer />} />
-      <Route exact path="/planets/:planetId" render={() => <PlanetContainer />} />
+      <Content>
+        <Route exact path="/films" render={() => <FilmsContainer />} />
+        <Route exact path="/films/:filmId" render={() => <FilmContainer />} />
+        <Route exact path="/people" render={() => <PeopleContainer />} />
+        <Route exact path="/people/:personId" render={() => <PersonContainer />} />
+        <Route exact path="/starships" render={() => <StarshipsContainer />} />
+        <Route exact path="/starships/:starshipId" render={() => <StarshipContainer />} />
+        <Route exact path="/vehicles" render={() => <VehiclesContainer />} />
+        <Route exact path="/vehicles/:vehicleId" render={() => <VehicleContainer />} />
+        <Route exact path="/species" render={() => <SpeciesContainer />} />
+        <Route exact path="/species/:raceId" render={() => <RaceContainer />} />
+        <Route exact path="/planets" render={() => <PlanetsContainer />} />
+        <Route exact path="/planets/:planetId" render={() => <PlanetContainer />} />
+      </Content>
     </>
   );
 }
