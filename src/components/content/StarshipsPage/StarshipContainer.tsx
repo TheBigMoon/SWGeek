@@ -22,7 +22,7 @@ const StarshipContainer: React.FC<StateToProps & DispatchToProps> = ({ starship,
   }, [dispatch, getStarship, starshipId]);
   return (
     <div>
-      <StarshipItem starship={starship} />
+      <StarshipItem showInfoBlocks showLink={false} starship={starship} />
     </div>
   );
 };
