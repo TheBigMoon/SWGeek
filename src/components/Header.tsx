@@ -4,7 +4,7 @@ import { LinkItem } from '../styledComponents/common/common';
 
 const Header = () => (
   <StyledHeader>
-    <LinkItem exact to="/films">
+    <LinkItem exact to="/">
       Films
     </LinkItem>
     <LinkItem exact to="/people">

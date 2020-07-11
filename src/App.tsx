@@ -21,7 +21,7 @@ function App() {
     <>
       <Header />
       <Content>
-        <Route exact path="/films" render={() => <FilmsContainer />} />
+        <Route exact path="/" render={() => <FilmsContainer />} />
         <Route exact path="/films/:filmId" render={() => <FilmContainer />} />
         <Route exact path="/people" render={() => <PeopleContainer />} />
         <Route exact path="/people/:personId" render={() => <PersonContainer />} />
