@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Race } from '../../../types/entities/entities';
 import { getSpecies } from '../../../redux/actions/actions';
@@ -22,10 +23,11 @@ const SpeciesContainer: React.FC<StateToProps & DispatchToProps> = (
     species, prevPage, nextPage, getSpecies
   }
 ) => {
+  const { search } = useLocation();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getSpecies(''));
-  }, [dispatch, getSpecies]);
+    dispatch(getSpecies(search));
+  }, [dispatch, getSpecies, search]);
   const allSpecies = species?.map((race) => (
     <RaceItem
       race={race}

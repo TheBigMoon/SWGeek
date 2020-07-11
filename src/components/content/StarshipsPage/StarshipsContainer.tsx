@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Starship } from '../../../types/entities/entities';
 import { getStarships } from '../../../redux/actions/actions';
@@ -22,10 +23,11 @@ const StarshipsContainer: React.FC<StateToProps & DispatchToProps> = (
     starships, prevPage, nextPage, getStarships
   }
 ) => {
+  const { search } = useLocation();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getStarships(''));
-  }, [dispatch, getStarships]);
+    dispatch(getStarships(search));
+  }, [dispatch, getStarships, search]);
   const allStarships = starships?.map((starship) => (
     <StarshipItem
       starship={starship}

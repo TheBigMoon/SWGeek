@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Vehicle } from '../../../types/entities/entities';
 import { getVehicles } from '../../../redux/actions/actions';
@@ -22,10 +23,11 @@ const VehiclesContainer: React.FC<StateToProps & DispatchToProps> = (
     vehicles, prevPage, nextPage, getVehicles
   }
 ) => {
+  const { search } = useLocation();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getVehicles(''));
-  }, [dispatch, getVehicles]);
+    dispatch(getVehicles(search));
+  }, [dispatch, getVehicles, search]);
   const allVehicles = vehicles?.map((vehicle) => (
     <VehicleItem
       showInfoBlocks={false}
