@@ -3,11 +3,12 @@ import { connect, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Race } from '../../../types/entities/entities';
-import { getSpecies } from '../../../redux/actions/actions';
+import { getSpecies, sortSpeciesByAZ, sortSpeciesByZA } from '../../../redux/actions/actions';
 import RaceItem from './RaceItem';
 import Paginator from '../common/Paginator';
 import { PageTitle } from '../../../styledComponents/common/common';
-import SearchField from "../common/SearchField";
+import SearchField from '../common/SearchField';
+import Sorter from '../common/Sorter';
 
 interface StateToProps {
   species: Array<Race> | null,
@@ -16,12 +17,14 @@ interface StateToProps {
 }
 
 interface DispatchToProps {
-  getSpecies: (page: string) => void
+  getSpecies: (page: string) => void,
+  sortSpeciesByAZ: (sortByAZ: boolean) => void,
+  sortSpeciesByZA: (sortByZA: boolean) => void
 }
 
 const SpeciesContainer: React.FC<StateToProps & DispatchToProps> = (
   {
-    species, prevPage, nextPage, getSpecies
+    species, prevPage, nextPage, getSpecies, sortSpeciesByAZ, sortSpeciesByZA
   }
 ) => {
   const { search } = useLocation();
@@ -42,6 +45,7 @@ const SpeciesContainer: React.FC<StateToProps & DispatchToProps> = (
         Species
       </PageTitle>
       <SearchField getContent={getSpecies} />
+      <Sorter sortByAZ={sortSpeciesByAZ} sortByZA={sortSpeciesByZA} />
       <Paginator prevPage={prevPage} nextPage={nextPage} />
       {allSpecies}
       <Paginator prevPage={prevPage} nextPage={nextPage} />
@@ -57,6 +61,8 @@ const MapStateToProps = (state: App): StateToProps => ({
 
 export default connect<StateToProps, DispatchToProps, {}, App>(
   MapStateToProps, {
-    getSpecies
+    getSpecies,
+    sortSpeciesByAZ,
+    sortSpeciesByZA
   }
 )(SpeciesContainer);

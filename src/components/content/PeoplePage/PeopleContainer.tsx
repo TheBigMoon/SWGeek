@@ -3,11 +3,12 @@ import { connect, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Person } from '../../../types/entities/entities';
-import { getPeople } from '../../../redux/actions/actions';
+import { getPeople, sortPeopleByAZ, sortPeopleByZA } from '../../../redux/actions/actions';
 import PersonItem from './PersonItem';
 import Paginator from '../common/Paginator';
 import { PageTitle } from '../../../styledComponents/common/common';
-import SearchField from "../common/SearchField";
+import SearchField from '../common/SearchField';
+import Sorter from '../common/Sorter';
 
 interface StateToProps {
   people: Array<Person> | null,
@@ -16,12 +17,14 @@ interface StateToProps {
 }
 
 interface DispatchToProps {
-  getPeople: (page: string) => void
+  getPeople: (page: string) => void,
+  sortPeopleByAZ: (sortByAZ: boolean) => void,
+  sortPeopleByZA: (sortByZA: boolean) => void,
 }
 
 const PeopleContainer: React.FC<StateToProps & DispatchToProps> = (
   {
-    people, prevPage, nextPage, getPeople
+    people, prevPage, nextPage, getPeople, sortPeopleByAZ, sortPeopleByZA
   }
 ) => {
   const { search } = useLocation();
@@ -42,6 +45,7 @@ const PeopleContainer: React.FC<StateToProps & DispatchToProps> = (
         People
       </PageTitle>
       <SearchField getContent={getPeople} />
+      <Sorter sortByAZ={sortPeopleByAZ} sortByZA={sortPeopleByZA} />
       <Paginator prevPage={prevPage} nextPage={nextPage} />
       {allPeople}
       <Paginator prevPage={prevPage} nextPage={nextPage} />
@@ -57,6 +61,8 @@ const MapStateToProps = (state: App): StateToProps => ({
 
 export default connect<StateToProps, DispatchToProps, {}, App>(
   MapStateToProps, {
-    getPeople
+    getPeople,
+    sortPeopleByAZ,
+    sortPeopleByZA
   }
 )(PeopleContainer);

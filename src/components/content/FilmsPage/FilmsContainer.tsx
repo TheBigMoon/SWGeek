@@ -4,19 +4,26 @@ import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Film } from '../../../types/entities/entities';
 import FilmItem from './FilmItem';
-import { getFilms } from '../../../redux/actions/actions';
+import { getFilms, sortFilmsByAZ, sortFilmsByZA } from '../../../redux/actions/actions';
 import { PageTitle } from '../../../styledComponents/common/common';
 import SearchField from '../common/SearchField';
+import Sorter from '../common/Sorter';
 
 interface StateToProps {
   films: Array<Film> | null
 }
 
 interface DispatchToProps {
-  getFilms: (page: string) => void
+  getFilms: (page: string) => void,
+  sortFilmsByAZ: (sortByAZ: boolean) => void
+  sortFilmsByZA: (sortByZA: boolean) => void
 }
 
-const FilmsContainer: React.FC<StateToProps & DispatchToProps> = ({ films, getFilms }) => {
+const FilmsContainer: React.FC<StateToProps & DispatchToProps> = (
+  {
+    films, getFilms, sortFilmsByAZ, sortFilmsByZA
+  }
+) => {
   const { search } = useLocation();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -29,6 +36,7 @@ const FilmsContainer: React.FC<StateToProps & DispatchToProps> = ({ films, getFi
         Films
       </PageTitle>
       <SearchField getContent={getFilms} />
+      <Sorter sortByAZ={sortFilmsByAZ} sortByZA={sortFilmsByZA} />
       {allFilms}
     </div>
   );
@@ -40,6 +48,8 @@ const MapStateToProps = (state: App): StateToProps => ({
 
 export default connect<StateToProps, DispatchToProps, {}, App>(
   MapStateToProps, {
-    getFilms
+    getFilms,
+    sortFilmsByAZ,
+    sortFilmsByZA
   }
 )(FilmsContainer);
