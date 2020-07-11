@@ -24,3 +24,5 @@ export const GET_PLANET = 'GET_PLANET';
 export const SET_PLANET = 'SET_PLANET';
 export const SORT_FILMS_BY_A_Z = 'SORT_FILMS_BY_A_Z';
 export const SORT_FILMS_BY_Z_A = 'SORT_FILMS_BY_Z_A';
+export const SORT_PEOPLE_BY_A_Z = 'SORT_PEOPLE_BY_A_Z';
+export const SORT_PEOPLE_BY_Z_A = 'SORT_PEOPLE_BY_Z_A';
