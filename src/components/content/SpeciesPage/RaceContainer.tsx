@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { App } from '../../../redux/store';
-import { getRace } from '../../../redux/actions/actions';
 import { Race } from '../../../types/entities/entities';
 import RaceItem from './RaceItem';
+import { getRace } from '../../../redux/actions/speciesActions';
 
 interface StateToProps {
   race: Race | null

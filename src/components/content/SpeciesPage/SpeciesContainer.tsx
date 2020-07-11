@@ -3,12 +3,12 @@ import { connect, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Race } from '../../../types/entities/entities';
-import { getSpecies, sortSpeciesByAZ, sortSpeciesByZA } from '../../../redux/actions/actions';
 import RaceItem from './RaceItem';
 import Paginator from '../common/Paginator';
 import { FlexBox, PageTitle } from '../../../styledComponents/common/common';
 import SearchField from '../common/SearchField';
 import Sorter from '../common/Sorter';
+import { getSpecies, sortSpeciesByAZ, sortSpeciesByZA } from '../../../redux/actions/speciesActions';
 
 interface StateToProps {
   species: Array<Race> | null,

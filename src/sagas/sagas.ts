@@ -9,24 +9,17 @@ import {
 } from '../constants/actionTypeConstants';
 import { GetPeople, GetPerson } from '../types/actions/peopleActionsTypes';
 import API from '../api/api';
-import {
-  setFilm,
-  setFilms,
-  setPeople,
-  setPerson, setPlanet,
-  setPlanets,
-  setRace,
-  setSpecies,
-  setStarship,
-  setStarships,
-  setVehicle,
-  setVehicles
-} from '../redux/actions/actions';
 import { GetFilm, GetFilms } from '../types/actions/filmsActionsTypes';
 import { GetStarship, GetStarships } from '../types/actions/starshipsActionsTypes';
 import { GetVehicle, GetVehicles } from '../types/actions/vehiclesActionTypes';
 import { GetRace, GetSpecies } from '../types/actions/speciesActionTypes';
 import { GetPlanet, GetPlanets } from '../types/actions/planetsActionTypes';
+import { setPlanet, setPlanets } from '../redux/actions/planetsActions';
+import { setStarship, setStarships } from '../redux/actions/starshipsActions';
+import { setFilm, setFilms } from '../redux/actions/filmsActions';
+import { setPeople, setPerson } from '../redux/actions/peopleActions';
+import { setVehicle, setVehicles } from '../redux/actions/vehiclesActions';
+import { setRace, setSpecies } from '../redux/actions/speciesActions';
 
 function* getPeopleWorker(action: GetPeople) {
   const { page } = action;

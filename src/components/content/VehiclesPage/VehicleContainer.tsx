@@ -3,8 +3,8 @@ import { connect, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Vehicle } from '../../../types/entities/entities';
-import { getVehicle } from '../../../redux/actions/actions';
 import VehicleItem from './VehicleItem';
+import { getVehicle } from '../../../redux/actions/vehiclesActions';
 
 interface StateToProps {
   vehicle: Vehicle | null

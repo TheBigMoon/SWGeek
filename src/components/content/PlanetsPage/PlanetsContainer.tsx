@@ -3,12 +3,12 @@ import { connect, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Planet } from '../../../types/entities/entities';
-import { getPlanets, sortPlanetsByAZ, sortPlanetsByZA } from '../../../redux/actions/actions';
 import PlanetItem from './PlanetItem';
 import Paginator from '../common/Paginator';
 import { FlexBox, PageTitle } from '../../../styledComponents/common/common';
 import SearchField from '../common/SearchField';
 import Sorter from '../common/Sorter';
+import { getPlanets, sortPlanetsByAZ, sortPlanetsByZA } from '../../../redux/actions/planetsActions';
 
 interface StateToProps {
   planets: Array<Planet> | null,

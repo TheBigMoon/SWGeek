@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Film } from '../../../types/entities/entities';
 import FilmItem from './FilmItem';
-import { getFilm } from '../../../redux/actions/actions';
+import { getFilm } from '../../../redux/actions/filmsActions';
 
 interface StateToProps {
   film: Film | null

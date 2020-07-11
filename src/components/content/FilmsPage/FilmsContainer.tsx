@@ -4,10 +4,10 @@ import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Film } from '../../../types/entities/entities';
 import FilmItem from './FilmItem';
-import { getFilms, sortFilmsByAZ, sortFilmsByZA } from '../../../redux/actions/actions';
 import { FlexBox, PageTitle } from '../../../styledComponents/common/common';
 import SearchField from '../common/SearchField';
 import Sorter from '../common/Sorter';
+import { getFilms, sortFilmsByAZ, sortFilmsByZA } from '../../../redux/actions/filmsActions';
 
 interface StateToProps {
   films: Array<Film> | null

@@ -1,7 +1,9 @@
-import {SpeciesStore} from '../../types/store/store';
-import {SpeciesActionType} from '../../types/actions/speciesActionTypes';
-import {SET_RACE, SET_SPECIES, SORT_SPECIES_BY_A_Z, SORT_SPECIES_BY_Z_A} from '../../constants/actionTypeConstants';
-import {sortHelper} from './reducerHelpers/sortHelper';
+import { SpeciesStore } from '../../types/store/store';
+import { SpeciesActionType } from '../../types/actions/speciesActionTypes';
+import {
+  SET_RACE, SET_SPECIES, SORT_SPECIES_BY_A_Z, SORT_SPECIES_BY_Z_A
+} from '../../constants/actionTypeConstants';
+import { sortHelper } from './reducerHelpers/sortHelper';
 
 const initialState: SpeciesStore = {
   species: null,

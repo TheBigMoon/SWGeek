@@ -3,8 +3,8 @@ import { connect, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Starship } from '../../../types/entities/entities';
-import { getStarship } from '../../../redux/actions/actions';
 import StarshipItem from './StarshipItem';
+import { getStarship } from '../../../redux/actions/starshipsActions';
 
 interface StateToProps {
   starship: Starship | null

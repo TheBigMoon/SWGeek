@@ -3,12 +3,12 @@ import { connect, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Starship } from '../../../types/entities/entities';
-import { getStarships, sortStarshipsByAZ, sortStarshipsByZA } from '../../../redux/actions/actions';
 import StarshipItem from './StarshipItem';
 import Paginator from '../common/Paginator';
 import { FlexBox, PageTitle } from '../../../styledComponents/common/common';
 import SearchField from '../common/SearchField';
 import Sorter from '../common/Sorter';
+import { getStarships, sortStarshipsByAZ, sortStarshipsByZA } from '../../../redux/actions/starshipsActions';
 
 interface StateToProps {
   starships: Array<Starship> | null,
