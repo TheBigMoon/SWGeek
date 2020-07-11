@@ -6,7 +6,7 @@ import { Starship } from '../../../types/entities/entities';
 import { getStarships, sortStarshipsByAZ, sortStarshipsByZA } from '../../../redux/actions/actions';
 import StarshipItem from './StarshipItem';
 import Paginator from '../common/Paginator';
-import { PageTitle } from '../../../styledComponents/common/common';
+import { FlexBox, PageTitle } from '../../../styledComponents/common/common';
 import SearchField from '../common/SearchField';
 import Sorter from '../common/Sorter';
 
@@ -44,8 +44,10 @@ const StarshipsContainer: React.FC<StateToProps & DispatchToProps> = (
       <PageTitle>
         Starships
       </PageTitle>
-      <SearchField getContent={getStarships} />
-      <Sorter sortByAZ={sortStarshipsByAZ} sortByZA={sortStarshipsByZA} />
+      <FlexBox column={false} center>
+        <SearchField getContent={getStarships} />
+        <Sorter sortByAZ={sortStarshipsByAZ} sortByZA={sortStarshipsByZA} />
+      </FlexBox>
       <Paginator prevPage={prevPage} nextPage={nextPage} />
       {allStarships}
       <Paginator prevPage={prevPage} nextPage={nextPage} />
