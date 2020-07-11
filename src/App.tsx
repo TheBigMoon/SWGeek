@@ -10,8 +10,8 @@ import StarshipsContainer from './components/content/StarshipsPage/StarshipsCont
 import StarshipContainer from './components/content/StarshipsPage/StarshipContainer';
 import VehiclesContainer from './components/content/VehiclesPage/VehiclesContainer';
 import VehicleContainer from './components/content/VehiclesPage/VehicleContainer';
-import SpeciesContainer from './components/content/Species/SpeciesContainer';
-import RaceContainer from './components/content/Species/RaceContainer';
+import SpeciesContainer from './components/content/SpeciesPage/SpeciesContainer';
+import RaceContainer from './components/content/SpeciesPage/RaceContainer';
 import PlanetsContainer from './components/content/PlanetsPage/PlanetsContainer';
 import PlanetContainer from './components/content/PlanetsPage/PlanetContainer';
 import { Content } from './styledComponents/common/common';
