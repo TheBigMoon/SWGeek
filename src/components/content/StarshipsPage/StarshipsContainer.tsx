@@ -41,8 +41,8 @@ const StarshipsContainer: React.FC<StateToProps & DispatchToProps> = (
       <PageTitle>
         Starships
       </PageTitle>
-      <Paginator prevPage={prevPage} nextPage={nextPage} />
       <SearchField getContent={getStarships} />
+      <Paginator prevPage={prevPage} nextPage={nextPage} />
       {allStarships}
       <Paginator prevPage={prevPage} nextPage={nextPage} />
     </div>
