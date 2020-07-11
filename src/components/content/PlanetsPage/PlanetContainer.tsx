@@ -3,8 +3,8 @@ import { connect, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Planet } from '../../../types/entities/entities';
-import { getPlanet } from '../../../redux/actions/actions';
 import PlanetItem from './PlanetItem';
+import { getPlanet } from '../../../redux/actions/planetsActions';
 
 interface StateToProps {
   planet: Planet | null

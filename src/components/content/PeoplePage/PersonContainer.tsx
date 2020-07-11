@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Person } from '../../../types/entities/entities';
 import PersonItem from './PersonItem';
-import { getPerson } from '../../../redux/actions/actions';
+import { getPerson } from '../../../redux/actions/peopleActions';
 
 interface StateToProps {
   person: Person | null

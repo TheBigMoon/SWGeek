@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { FlexBox } from '../../../styledComponents/common/common';
-import {SorterButton, StyledSorter} from "../../../styledComponents/common/StyledSorter";
+import { SorterButton, StyledSorter } from '../../../styledComponents/common/StyledSorter';
 
 interface SelectorProps {
   sortByAZ: (sortByAZ: boolean) => void

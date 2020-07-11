@@ -3,12 +3,12 @@ import { connect, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Person } from '../../../types/entities/entities';
-import { getPeople, sortPeopleByAZ, sortPeopleByZA } from '../../../redux/actions/actions';
 import PersonItem from './PersonItem';
 import Paginator from '../common/Paginator';
-import { PageTitle } from '../../../styledComponents/common/common';
+import { FlexBox, PageTitle } from '../../../styledComponents/common/common';
 import SearchField from '../common/SearchField';
 import Sorter from '../common/Sorter';
+import { getPeople, sortPeopleByAZ, sortPeopleByZA } from '../../../redux/actions/peopleActions';
 
 interface StateToProps {
   people: Array<Person> | null,
@@ -34,6 +34,7 @@ const PeopleContainer: React.FC<StateToProps & DispatchToProps> = (
   }, [dispatch, getPeople, search]);
   const allPeople = people?.map((person) => (
     <PersonItem
+      key={person.name}
       showInfoBlocks={false}
       showLink
       person={person}
@@ -44,8 +45,10 @@ const PeopleContainer: React.FC<StateToProps & DispatchToProps> = (
       <PageTitle>
         People
       </PageTitle>
-      <SearchField getContent={getPeople} />
-      <Sorter sortByAZ={sortPeopleByAZ} sortByZA={sortPeopleByZA} />
+      <FlexBox column={false} center>
+        <SearchField getContent={getPeople} />
+        <Sorter sortByAZ={sortPeopleByAZ} sortByZA={sortPeopleByZA} />
+      </FlexBox>
       <Paginator prevPage={prevPage} nextPage={nextPage} />
       {allPeople}
       <Paginator prevPage={prevPage} nextPage={nextPage} />

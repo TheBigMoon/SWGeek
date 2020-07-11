@@ -5,10 +5,9 @@ interface PaginatorProps {
   prevPage: string | null,
   nextPage: string | null,
 }
-const Paginator: React.FC<PaginatorProps> = ({ prevPage, nextPage }) => {
-  return (
-    <StyledPaginator>
-      {
+const Paginator: React.FC<PaginatorProps> = ({ prevPage, nextPage }) => (
+  <StyledPaginator>
+    {
         prevPage
           ? (
             <PageButton to={prevPage.replace(/http:\/\/swapi\.dev\/api\/.+\//g, '')}>
@@ -17,7 +16,7 @@ const Paginator: React.FC<PaginatorProps> = ({ prevPage, nextPage }) => {
           )
           : null
       }
-      {
+    {
         nextPage
           ? (
             <PageButton to={nextPage.replace(/http:\/\/swapi\.dev\/api\/.+\//g, '')}>
@@ -26,8 +25,7 @@ const Paginator: React.FC<PaginatorProps> = ({ prevPage, nextPage }) => {
           )
           : null
       }
-    </StyledPaginator>
-  );
-};
+  </StyledPaginator>
+);
 
 export default Paginator;

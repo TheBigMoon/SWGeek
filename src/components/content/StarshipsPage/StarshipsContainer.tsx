@@ -3,12 +3,12 @@ import { connect, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Starship } from '../../../types/entities/entities';
-import { getStarships, sortStarshipsByAZ, sortStarshipsByZA } from '../../../redux/actions/actions';
 import StarshipItem from './StarshipItem';
 import Paginator from '../common/Paginator';
-import { PageTitle } from '../../../styledComponents/common/common';
+import { FlexBox, PageTitle } from '../../../styledComponents/common/common';
 import SearchField from '../common/SearchField';
 import Sorter from '../common/Sorter';
+import { getStarships, sortStarshipsByAZ, sortStarshipsByZA } from '../../../redux/actions/starshipsActions';
 
 interface StateToProps {
   starships: Array<Starship> | null,
@@ -34,6 +34,7 @@ const StarshipsContainer: React.FC<StateToProps & DispatchToProps> = (
   }, [dispatch, getStarships, search]);
   const allStarships = starships?.map((starship) => (
     <StarshipItem
+      key={starship.name}
       starship={starship}
       showLink
       showInfoBlocks={false}
@@ -44,8 +45,10 @@ const StarshipsContainer: React.FC<StateToProps & DispatchToProps> = (
       <PageTitle>
         Starships
       </PageTitle>
-      <SearchField getContent={getStarships} />
-      <Sorter sortByAZ={sortStarshipsByAZ} sortByZA={sortStarshipsByZA} />
+      <FlexBox column={false} center>
+        <SearchField getContent={getStarships} />
+        <Sorter sortByAZ={sortStarshipsByAZ} sortByZA={sortStarshipsByZA} />
+      </FlexBox>
       <Paginator prevPage={prevPage} nextPage={nextPage} />
       {allStarships}
       <Paginator prevPage={prevPage} nextPage={nextPage} />
