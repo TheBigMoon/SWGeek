@@ -38,9 +38,9 @@ const PlanetsContainer: React.FC<StateToProps & DispatchToProps> = (
       <PageTitle>
         Planets
       </PageTitle>
-      <Paginator prevPage={prevPage} nextPage={nextPage} getContent={getPlanets} />
+      <Paginator prevPage={prevPage} nextPage={nextPage} />
       {allPlanets}
-      <Paginator prevPage={prevPage} nextPage={nextPage} getContent={getPlanets} />
+      <Paginator prevPage={prevPage} nextPage={nextPage} />
     </div>
   );
 };
