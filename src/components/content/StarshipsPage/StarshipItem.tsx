@@ -76,7 +76,7 @@ const StarshipItem: React.FC<StarshipProps> = ({ starship, showLink, showInfoBlo
     {
       showInfoBlocks
         ? (
-          <FlexBox column>
+          <FlexBox column center={false}>
             <InfoBlock links={starship?.pilots} linksName="Pilot" name="Pilots" />
             <InfoBlock links={starship?.films} linksName="Film" name="Films" />
           </FlexBox>

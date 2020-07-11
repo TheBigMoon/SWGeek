@@ -5,7 +5,7 @@ import { App } from '../../../redux/store';
 import { Film } from '../../../types/entities/entities';
 import FilmItem from './FilmItem';
 import { getFilms, sortFilmsByAZ, sortFilmsByZA } from '../../../redux/actions/actions';
-import { PageTitle } from '../../../styledComponents/common/common';
+import {FlexBox, PageTitle} from '../../../styledComponents/common/common';
 import SearchField from '../common/SearchField';
 import Sorter from '../common/Sorter';
 
@@ -35,8 +35,10 @@ const FilmsContainer: React.FC<StateToProps & DispatchToProps> = (
       <PageTitle>
         Films
       </PageTitle>
-      <SearchField getContent={getFilms} />
-      <Sorter sortByAZ={sortFilmsByAZ} sortByZA={sortFilmsByZA} />
+      <FlexBox column={false} center>
+        <SearchField getContent={getFilms} />
+        <Sorter sortByAZ={sortFilmsByAZ} sortByZA={sortFilmsByZA} />
+      </FlexBox>
       {allFilms}
     </div>
   );

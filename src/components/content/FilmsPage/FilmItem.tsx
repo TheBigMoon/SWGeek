@@ -61,7 +61,7 @@ const FilmItem: React.FC<FilmProps> = ({ film, showLink, showInfoBlocks }) => (
     {
       showInfoBlocks
         ? (
-          <FlexBox column>
+          <FlexBox column center={false}>
             <InfoBlock links={film?.characters} linksName="Person" name="Characters" />
             <InfoBlock links={film?.planets} linksName="Planet" name="Planets" />
             <InfoBlock links={film?.starships} linksName="Starship" name="Starships" />

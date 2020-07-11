@@ -68,7 +68,7 @@ const VehicleItem: React.FC<VehicleProps> = ({ vehicle, showLink, showInfoBlocks
     {
       showInfoBlocks
         ? (
-          <FlexBox column>
+          <FlexBox column center={false}>
             <InfoBlock links={vehicle?.pilots} linksName="Pilot" name="Pilots" />
             <InfoBlock links={vehicle?.films} linksName="Film" name="Films" />
           </FlexBox>

@@ -60,7 +60,7 @@ const PlanetItem: React.FC<PlanetProps> = ({ planet, showLink, showInfoBlocks })
     {
       showInfoBlocks
         ? (
-          <FlexBox column>
+          <FlexBox column center={false}>
             <InfoBlock links={planet?.residents} linksName="Resident" name="Residents" />
             <InfoBlock links={planet?.films} linksName="Film" name="Films" />
           </FlexBox>
