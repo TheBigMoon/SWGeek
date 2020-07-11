@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Person } from '../../../types/entities/entities';
 import { getPeople } from '../../../redux/actions/actions';
@@ -22,10 +23,11 @@ const PeopleContainer: React.FC<StateToProps & DispatchToProps> = (
     people, prevPage, nextPage, getPeople
   }
 ) => {
+  const { search } = useLocation();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getPeople(''));
-  }, [dispatch, getPeople]);
+    dispatch(getPeople(search));
+  }, [dispatch, getPeople, search]);
   const allPeople = people?.map((person) => (
     <PersonItem
       showInfoBlocks={false}
