@@ -14,7 +14,7 @@ const SearchField: React.FC<SearchFieldProps> = ({ getContent }) => {
   return (
     <StyledSearchField
       onChange={(e) => { searchContent(`?search=${e.target.value}`); }}
-      placeholder="some text"
+      placeholder="I'm looking for..."
       type="text"
     />
   );
