@@ -22,5 +22,5 @@ export const GET_PLANETS = 'GET_PLANETS';
 export const SET_PLANETS = 'SET_PLANETS';
 export const GET_PLANET = 'GET_PLANET';
 export const SET_PLANET = 'SET_PLANET';
-export const SORT_BY_A_Z = 'SORT_BY_A_Z';
-export const SORT_BY_Z_A = 'SORT_BY_Z_A';
+export const SORT_FILMS_BY_A_Z = 'SORT_FILMS_BY_A_Z';
+export const SORT_FILMS_BY_Z_A = 'SORT_FILMS_BY_Z_A';
