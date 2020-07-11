@@ -2,42 +2,42 @@ import {
   Film, Person, Planet, Race, Starship, Vehicle
 } from '../entities/entities';
 
-export interface PeopleStore {
-  people: Array<Person> | null,
-  person: Person | null,
+interface SortStore {
+  sortByAZ: boolean,
+  sortByZA: boolean
+}
+
+interface PageStore {
   prevPage: string | null,
   nextPage: string | null
 }
 
-export interface FilmsStore {
+export interface PeopleStore extends SortStore, PageStore {
+  people: Array<Person> | null,
+  person: Person | null
+}
+
+export interface FilmsStore extends SortStore {
   films: Array<Film> | null,
   film: Film | null
 }
 
-export interface StarhipsStore {
+export interface StarhipsStore extends SortStore, PageStore {
   starships: Array<Starship> | null,
-  starship: Starship | null,
-  prevPage: string | null,
-  nextPage: string | null
+  starship: Starship | null
 }
 
-export interface VehiclesStore {
+export interface VehiclesStore extends SortStore, PageStore {
   vehicles: Array<Vehicle> | null,
-  vehicle: Vehicle | null,
-  prevPage: string | null,
-  nextPage: string | null
+  vehicle: Vehicle | null
 }
 
-export interface SpeciesStore {
+export interface SpeciesStore extends SortStore, PageStore {
   species: Array<Race> | null,
-  race: Race | null,
-  prevPage: string | null,
-  nextPage: string | null
+  race: Race | null
 }
 
-export interface PlanetsStore {
+export interface PlanetsStore extends SortStore, PageStore {
   planets: Array<Planet> | null,
-  planet: Planet | null,
-  prevPage: string | null,
-  nextPage: string | null
+  planet: Planet | null
 }
