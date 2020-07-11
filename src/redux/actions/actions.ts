@@ -24,16 +24,28 @@ import {
   SET_VEHICLE,
   SET_VEHICLES,
   SORT_FILMS_BY_A_Z,
-  SORT_FILMS_BY_Z_A
+  SORT_FILMS_BY_Z_A,
+  SORT_PEOPLE_BY_A_Z,
+  SORT_PEOPLE_BY_Z_A
 } from '../../constants/actionTypeConstants';
 import {
   Film, Person, Planet, Race, Starship, Vehicle
 } from '../../types/entities/entities';
 import {
-  GetPeople, GetPerson, SetPeople, SetPerson
+  GetPeople,
+  GetPerson,
+  SetPeople,
+  SetPerson,
+  SortPeopleByAZ,
+  SortPeopleByZA
 } from '../../types/actions/peopleActionsTypes';
 import {
-  GetFilm, GetFilms, SetFilm, SetFilms, SortFilmsByAZ, SortFilmsByZA
+  GetFilm,
+  GetFilms,
+  SetFilm,
+  SetFilms,
+  SortFilmsByAZ,
+  SortFilmsByZA
 } from '../../types/actions/filmsActionsTypes';
 import {
   GetStarship, GetStarships, SetStarship, SetStarships
@@ -55,6 +67,12 @@ export const setPeople = (
 ): SetPeople => ({
   type: SET_PEOPLE, people, prevPage, nextPage
 });
+export const sortPeopleByAZ = (sortByAZ: boolean): SortPeopleByAZ => (
+  { type: SORT_PEOPLE_BY_A_Z, sortByAZ }
+);
+export const sortPeopleByZA = (sortByZA: boolean): SortPeopleByZA => (
+  { type: SORT_PEOPLE_BY_Z_A, sortByZA }
+);
 export const getPerson = (personId: number): GetPerson => ({ type: GET_PERSON, personId });
 export const setPerson = (person: Person): SetPerson => ({ type: SET_PERSON, person });
 
