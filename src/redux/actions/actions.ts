@@ -185,10 +185,10 @@ export const setPlanets = (
 ): SetPlanets => ({
   type: SET_PLANETS, planets, prevPage, nextPage
 });
-export const sortPlanetByZA = (sortByAZ: boolean): SortPlanetsByAZ => (
+export const sortPlanetsByAZ = (sortByAZ: boolean): SortPlanetsByAZ => (
   { type: SORT_PLANETS_BY_A_Z, sortByAZ }
 );
-export const sortPlanetByAZ = (sortByZA: boolean): SortPlanetsByZA => (
+export const sortPlanetsByZA = (sortByZA: boolean): SortPlanetsByZA => (
   { type: SORT_PLANETS_BY_Z_A, sortByZA }
 );
 export const getPlanet = (planetId: number): GetPlanet => ({ type: GET_PLANET, planetId });
