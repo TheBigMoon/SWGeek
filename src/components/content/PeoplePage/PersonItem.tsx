@@ -67,7 +67,7 @@ const PersonItem: React.FC<PersonProps> = ({ person, showLink, showInfoBlocks })
       {
         showInfoBlocks
           ? (
-            <FlexBox>
+            <FlexBox column>
               <InfoBlock links={person?.films} linksName="Film" name="Films" />
               <InfoBlock links={person?.starships} linksName="Starship" name="Starships" />
               <InfoBlock links={person?.vehicles} linksName="Vehicle" name="Vehicles" />

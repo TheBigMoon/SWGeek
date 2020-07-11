@@ -26,7 +26,7 @@ const InfoBlock: React.FC<InfoBlockProps> = ({ links, linksName, name }) => {
       <InfoName onClick={() => toggleLinks(!showLinks)} role="presentation">
         {showLinks ? `Hide ${name}` : `Show ${name}`}
       </InfoName>
-      <FlexBox>
+      <FlexBox column>
         {showLinks ? allLinks : null}
       </FlexBox>
     </StyledInfoBLock>

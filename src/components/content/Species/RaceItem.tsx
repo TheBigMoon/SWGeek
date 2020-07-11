@@ -78,7 +78,7 @@ const RaceItem: React.FC<RaceProps> = ({ race, showInfoBlocks, showLink }) => {
       {
         showInfoBlocks
           ? (
-            <FlexBox>
+            <FlexBox column>
               <InfoBlock links={race?.people} linksName="Race" name="People" />
               <InfoBlock links={race?.films} linksName="Film" name="Films" />
             </FlexBox>

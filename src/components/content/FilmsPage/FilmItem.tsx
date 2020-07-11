@@ -4,7 +4,7 @@ import InfoBlock from '../common/InfoBlock';
 import {
   InfoLine, InfoProp, ItemH2, ItemTitle, PageItem
 } from '../../../styledComponents/PageItem';
-import {FlexBox, LinkItem} from '../../../styledComponents/common/common';
+import { FlexBox, LinkItem } from '../../../styledComponents/common/common';
 
 interface FilmProps {
   film: Film | null,
@@ -61,7 +61,7 @@ const FilmItem: React.FC<FilmProps> = ({ film, showLink, showInfoBlocks }) => (
     {
       showInfoBlocks
         ? (
-          <FlexBox>
+          <FlexBox column>
             <InfoBlock links={film?.characters} linksName="Person" name="Characters" />
             <InfoBlock links={film?.planets} linksName="Planet" name="Planets" />
             <InfoBlock links={film?.starships} linksName="Starship" name="Starships" />
