@@ -1,12 +1,18 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export const LinkItem = styled(NavLink)`
+const activeClassName = 'item-active';
+
+export const LinkItem = styled(NavLink).attrs({ activeClassName })`
   text-decoration: none;
   cursor: pointer;
   color: #000000;
   font-size: 20px;
   font-weight: 600;
+  
+  &.${activeClassName} {
+   color: #e1ffb1;
+  }
 `;
 
 export const Content = styled.div`
