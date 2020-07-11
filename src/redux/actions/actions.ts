@@ -22,7 +22,9 @@ import {
   SET_STARSHIP,
   SET_STARSHIPS,
   SET_VEHICLE,
-  SET_VEHICLES
+  SET_VEHICLES,
+  SORT_FILMS_BY_A_Z,
+  SORT_FILMS_BY_Z_A
 } from '../../constants/actionTypeConstants';
 import {
   Film, Person, Planet, Race, Starship, Vehicle
@@ -31,7 +33,7 @@ import {
   GetPeople, GetPerson, SetPeople, SetPerson
 } from '../../types/actions/peopleActionsTypes';
 import {
-  GetFilm, GetFilms, SetFilm, SetFilms
+  GetFilm, GetFilms, SetFilm, SetFilms, SortByAZ, SortByZA
 } from '../../types/actions/filmsActionsTypes';
 import {
   GetStarship, GetStarships, SetStarship, SetStarships
@@ -67,6 +69,12 @@ export const setFilms = (
 });
 export const getFilm = (filmId: number): GetFilm => ({ type: GET_FILM, filmId });
 export const setFilm = (film: Film): SetFilm => ({ type: SET_FILM, film });
+export const sortFilmsByAZ = (sortByAZ: boolean): SortByAZ => (
+  { type: SORT_FILMS_BY_A_Z, sortByAZ }
+);
+export const sortFilmsByZA = (sortByZA: boolean): SortByZA => (
+  { type: SORT_FILMS_BY_Z_A, sortByZA }
+);
 
 // STARSHIPS ACTIONS
 export const getStarships = (page: string): GetStarships => ({ type: GET_STARSHIPS, page });
@@ -74,11 +82,9 @@ export const setStarships = (
   starships: Array<Starship>,
   prevPage: string | null,
   nextPage: string | null
-): SetStarships => {
-  return {
-    type: SET_STARSHIPS, starships, prevPage, nextPage
-  };
-};
+): SetStarships => ({
+  type: SET_STARSHIPS, starships, prevPage, nextPage
+});
 export const getStarship = (starshipId: number): GetStarship => (
   { type: GET_STARSHIP, starshipId }
 );
