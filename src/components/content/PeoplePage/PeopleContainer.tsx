@@ -7,6 +7,7 @@ import { getPeople } from '../../../redux/actions/actions';
 import PersonItem from './PersonItem';
 import Paginator from '../common/Paginator';
 import { PageTitle } from '../../../styledComponents/common/common';
+import SearchField from "../common/SearchField";
 
 interface StateToProps {
   people: Array<Person> | null,
@@ -41,6 +42,7 @@ const PeopleContainer: React.FC<StateToProps & DispatchToProps> = (
         People
       </PageTitle>
       <Paginator prevPage={prevPage} nextPage={nextPage} />
+      <SearchField getContent={getPeople} />
       {allPeople}
       <Paginator prevPage={prevPage} nextPage={nextPage} />
     </div>

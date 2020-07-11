@@ -7,6 +7,7 @@ import { getPlanets } from '../../../redux/actions/actions';
 import PlanetItem from './PlanetItem';
 import Paginator from '../common/Paginator';
 import { PageTitle } from '../../../styledComponents/common/common';
+import SearchField from "../common/SearchField";
 
 interface StateToProps {
   planets: Array<Planet> | null,
@@ -41,6 +42,7 @@ const PlanetsContainer: React.FC<StateToProps & DispatchToProps> = (
         Planets
       </PageTitle>
       <Paginator prevPage={prevPage} nextPage={nextPage} />
+      <SearchField getContent={getPlanets} />
       {allPlanets}
       <Paginator prevPage={prevPage} nextPage={nextPage} />
     </div>

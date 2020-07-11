@@ -6,6 +6,7 @@ import { Film } from '../../../types/entities/entities';
 import FilmItem from './FilmItem';
 import { getFilms } from '../../../redux/actions/actions';
 import { PageTitle } from '../../../styledComponents/common/common';
+import SearchField from '../common/SearchField';
 
 interface StateToProps {
   films: Array<Film> | null
@@ -27,6 +28,7 @@ const FilmsContainer: React.FC<StateToProps & DispatchToProps> = ({ films, getFi
       <PageTitle>
         Films
       </PageTitle>
+      <SearchField getContent={getFilms} />
       {allFilms}
     </div>
   );
