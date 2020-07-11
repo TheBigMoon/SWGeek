@@ -20,7 +20,7 @@ const peopleReducer = (state = initialState, action: PeopleActionType): PeopleSt
       const people = sortHelper(state.sortByAZ, state.sortByZA, action.people);
       return {
         ...state,
-        people: [...people],
+        people,
         prevPage: action.prevPage,
         nextPage: action.nextPage
       };
