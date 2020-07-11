@@ -22,8 +22,14 @@ export const PageTitle = styled.div`
   font-weight: 600;
 `;
 
+interface FlexBoxProps {
+  column: boolean,
+  center: boolean
+}
+
 export const FlexBox = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${(props: FlexBoxProps) => (props.column ? 'column' : 'row')};
   justify-content: center;
+  align-items: ${(props: FlexBoxProps) => (props.center ? 'center' : 'normal')};
 `;
