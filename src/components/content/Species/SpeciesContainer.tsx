@@ -7,6 +7,7 @@ import { getSpecies } from '../../../redux/actions/actions';
 import RaceItem from './RaceItem';
 import Paginator from '../common/Paginator';
 import { PageTitle } from '../../../styledComponents/common/common';
+import SearchField from "../common/SearchField";
 
 interface StateToProps {
   species: Array<Race> | null,
@@ -40,6 +41,7 @@ const SpeciesContainer: React.FC<StateToProps & DispatchToProps> = (
       <PageTitle>
         Species
       </PageTitle>
+      <SearchField getContent={getSpecies} />
       <Paginator prevPage={prevPage} nextPage={nextPage} />
       {allSpecies}
       <Paginator prevPage={prevPage} nextPage={nextPage} />

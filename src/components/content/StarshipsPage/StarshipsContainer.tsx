@@ -7,6 +7,7 @@ import { getStarships } from '../../../redux/actions/actions';
 import StarshipItem from './StarshipItem';
 import Paginator from '../common/Paginator';
 import { PageTitle } from '../../../styledComponents/common/common';
+import SearchField from "../common/SearchField";
 
 interface StateToProps {
   starships: Array<Starship> | null,
@@ -40,6 +41,7 @@ const StarshipsContainer: React.FC<StateToProps & DispatchToProps> = (
       <PageTitle>
         Starships
       </PageTitle>
+      <SearchField getContent={getStarships} />
       <Paginator prevPage={prevPage} nextPage={nextPage} />
       {allStarships}
       <Paginator prevPage={prevPage} nextPage={nextPage} />

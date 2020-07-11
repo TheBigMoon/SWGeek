@@ -7,6 +7,7 @@ import { getVehicles } from '../../../redux/actions/actions';
 import VehicleItem from './VehicleItem';
 import Paginator from '../common/Paginator';
 import { PageTitle } from '../../../styledComponents/common/common';
+import SearchField from "../common/SearchField";
 
 interface StateToProps {
   vehicles: Array<Vehicle> | null,
@@ -40,6 +41,7 @@ const VehiclesContainer: React.FC<StateToProps & DispatchToProps> = (
       <PageTitle>
         Vehicles
       </PageTitle>
+      <SearchField getContent={getVehicles} />
       <Paginator prevPage={prevPage} nextPage={nextPage} />
       {allVehicles}
       <Paginator prevPage={prevPage} nextPage={nextPage} />
