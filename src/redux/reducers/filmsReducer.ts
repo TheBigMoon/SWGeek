@@ -3,7 +3,7 @@ import { FilmsActionType } from '../../types/actions/filmsActionsTypes';
 import {
   SET_FILM, SET_FILMS, SORT_FILMS_BY_A_Z, SORT_FILMS_BY_Z_A
 } from '../../constants/actionTypeConstants';
-import { filmSorter } from './reducerHelpers/sortHelpers';
+import { filmSorter } from './reducerHelpers/sortHelper';
 
 const initialState: FilmsStore = {
   films: null,
