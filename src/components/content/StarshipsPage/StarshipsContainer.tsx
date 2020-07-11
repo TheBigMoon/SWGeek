@@ -3,11 +3,12 @@ import { connect, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Starship } from '../../../types/entities/entities';
-import { getStarships } from '../../../redux/actions/actions';
+import { getStarships, sortStarshipsByAZ, sortStarshipsByZA } from '../../../redux/actions/actions';
 import StarshipItem from './StarshipItem';
 import Paginator from '../common/Paginator';
 import { PageTitle } from '../../../styledComponents/common/common';
-import SearchField from "../common/SearchField";
+import SearchField from '../common/SearchField';
+import Sorter from '../common/Sorter';
 
 interface StateToProps {
   starships: Array<Starship> | null,
@@ -16,12 +17,14 @@ interface StateToProps {
 }
 
 interface DispatchToProps {
-  getStarships: (page: string) => void
+  getStarships: (page: string) => void,
+  sortStarshipsByAZ: (sortByAZ: boolean) => void,
+  sortStarshipsByZA: (sortByZA: boolean) => void
 }
 
 const StarshipsContainer: React.FC<StateToProps & DispatchToProps> = (
   {
-    starships, prevPage, nextPage, getStarships
+    starships, prevPage, nextPage, getStarships, sortStarshipsByAZ, sortStarshipsByZA
   }
 ) => {
   const { search } = useLocation();
@@ -42,6 +45,7 @@ const StarshipsContainer: React.FC<StateToProps & DispatchToProps> = (
         Starships
       </PageTitle>
       <SearchField getContent={getStarships} />
+      <Sorter sortByAZ={sortStarshipsByAZ} sortByZA={sortStarshipsByZA} />
       <Paginator prevPage={prevPage} nextPage={nextPage} />
       {allStarships}
       <Paginator prevPage={prevPage} nextPage={nextPage} />
@@ -57,6 +61,8 @@ const MapStateToProps = (state: App): StateToProps => ({
 
 export default connect<StateToProps, DispatchToProps, {}, App>(
   MapStateToProps, {
-    getStarships
+    getStarships,
+    sortStarshipsByAZ,
+    sortStarshipsByZA
   }
 )(StarshipsContainer);

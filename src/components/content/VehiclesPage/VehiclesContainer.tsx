@@ -3,11 +3,12 @@ import { connect, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Vehicle } from '../../../types/entities/entities';
-import { getVehicles } from '../../../redux/actions/actions';
+import {getVehicles, sortVehiclesByAZ, sortVehiclesByZA} from '../../../redux/actions/actions';
 import VehicleItem from './VehicleItem';
 import Paginator from '../common/Paginator';
 import { PageTitle } from '../../../styledComponents/common/common';
-import SearchField from "../common/SearchField";
+import SearchField from '../common/SearchField';
+import Sorter from "../common/Sorter";
 
 interface StateToProps {
   vehicles: Array<Vehicle> | null,
@@ -16,12 +17,14 @@ interface StateToProps {
 }
 
 interface DispatchToProps {
-  getVehicles: (page: string) => void
+  getVehicles: (page: string) => void,
+  sortVehiclesByAZ: (sortByAZ: boolean) => void,
+  sortVehiclesByZA: (sortByZA: boolean) => void
 }
 
 const VehiclesContainer: React.FC<StateToProps & DispatchToProps> = (
   {
-    vehicles, prevPage, nextPage, getVehicles
+    vehicles, prevPage, nextPage, getVehicles, sortVehiclesByAZ, sortVehiclesByZA
   }
 ) => {
   const { search } = useLocation();
@@ -42,6 +45,7 @@ const VehiclesContainer: React.FC<StateToProps & DispatchToProps> = (
         Vehicles
       </PageTitle>
       <SearchField getContent={getVehicles} />
+      <Sorter sortByAZ={sortVehiclesByAZ} sortByZA={sortVehiclesByZA} />
       <Paginator prevPage={prevPage} nextPage={nextPage} />
       {allVehicles}
       <Paginator prevPage={prevPage} nextPage={nextPage} />
@@ -57,6 +61,8 @@ const MapStateToProps = (state: App): StateToProps => ({
 
 export default connect<StateToProps, DispatchToProps, {}, App>(
   MapStateToProps, {
-    getVehicles
+    getVehicles,
+    sortVehiclesByAZ,
+    sortVehiclesByZA
   }
 )(VehiclesContainer);

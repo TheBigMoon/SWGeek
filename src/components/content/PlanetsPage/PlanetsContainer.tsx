@@ -3,11 +3,12 @@ import { connect, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { App } from '../../../redux/store';
 import { Planet } from '../../../types/entities/entities';
-import { getPlanets } from '../../../redux/actions/actions';
+import { getPlanets, sortPlanetsByAZ, sortPlanetsByZA } from '../../../redux/actions/actions';
 import PlanetItem from './PlanetItem';
 import Paginator from '../common/Paginator';
 import { PageTitle } from '../../../styledComponents/common/common';
-import SearchField from "../common/SearchField";
+import SearchField from '../common/SearchField';
+import Sorter from '../common/Sorter';
 
 interface StateToProps {
   planets: Array<Planet> | null,
@@ -16,12 +17,14 @@ interface StateToProps {
 }
 
 interface DispatchToProps {
-  getPlanets: (page: string) => void
+  getPlanets: (page: string) => void,
+  sortPlanetsByAZ: (sortByAZ: boolean) => void,
+  sortPlanetsByZA: (sortByZA: boolean) => void,
 }
 
 const PlanetsContainer: React.FC<StateToProps & DispatchToProps> = (
   {
-    planets, prevPage, nextPage, getPlanets
+    planets, prevPage, nextPage, getPlanets, sortPlanetsByAZ, sortPlanetsByZA
   }
 ) => {
   const { search } = useLocation();
@@ -42,6 +45,7 @@ const PlanetsContainer: React.FC<StateToProps & DispatchToProps> = (
         Planets
       </PageTitle>
       <SearchField getContent={getPlanets} />
+      <Sorter sortByAZ={sortPlanetsByAZ} sortByZA={sortPlanetsByZA} />
       <Paginator prevPage={prevPage} nextPage={nextPage} />
       {allPlanets}
       <Paginator prevPage={prevPage} nextPage={nextPage} />
@@ -57,6 +61,8 @@ const MapStateToProps = (state: App): StateToProps => ({
 
 export default connect<StateToProps, DispatchToProps, {}, App>(
   MapStateToProps, {
-    getPlanets
+    getPlanets,
+    sortPlanetsByAZ,
+    sortPlanetsByZA
   }
 )(PlanetsContainer);
