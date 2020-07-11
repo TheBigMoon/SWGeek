@@ -6,7 +6,7 @@ import { Person } from '../../../types/entities/entities';
 import { getPeople, sortPeopleByAZ, sortPeopleByZA } from '../../../redux/actions/actions';
 import PersonItem from './PersonItem';
 import Paginator from '../common/Paginator';
-import {FlexBox, PageTitle} from '../../../styledComponents/common/common';
+import { FlexBox, PageTitle } from '../../../styledComponents/common/common';
 import SearchField from '../common/SearchField';
 import Sorter from '../common/Sorter';
 

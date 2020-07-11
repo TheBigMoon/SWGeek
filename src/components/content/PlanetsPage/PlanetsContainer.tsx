@@ -6,7 +6,7 @@ import { Planet } from '../../../types/entities/entities';
 import { getPlanets, sortPlanetsByAZ, sortPlanetsByZA } from '../../../redux/actions/actions';
 import PlanetItem from './PlanetItem';
 import Paginator from '../common/Paginator';
-import {FlexBox, PageTitle} from '../../../styledComponents/common/common';
+import { FlexBox, PageTitle } from '../../../styledComponents/common/common';
 import SearchField from '../common/SearchField';
 import Sorter from '../common/Sorter';
 
