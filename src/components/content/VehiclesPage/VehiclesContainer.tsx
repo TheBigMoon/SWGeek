@@ -34,6 +34,7 @@ const VehiclesContainer: React.FC<StateToProps & DispatchToProps> = (
   }, [dispatch, getVehicles, search]);
   const allVehicles = vehicles?.map((vehicle) => (
     <VehicleItem
+      key={vehicle.name}
       showInfoBlocks={false}
       showLink
       vehicle={vehicle}

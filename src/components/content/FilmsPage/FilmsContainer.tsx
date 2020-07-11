@@ -5,7 +5,7 @@ import { App } from '../../../redux/store';
 import { Film } from '../../../types/entities/entities';
 import FilmItem from './FilmItem';
 import { getFilms, sortFilmsByAZ, sortFilmsByZA } from '../../../redux/actions/actions';
-import {FlexBox, PageTitle} from '../../../styledComponents/common/common';
+import { FlexBox, PageTitle } from '../../../styledComponents/common/common';
 import SearchField from '../common/SearchField';
 import Sorter from '../common/Sorter';
 
@@ -29,7 +29,14 @@ const FilmsContainer: React.FC<StateToProps & DispatchToProps> = (
   useEffect(() => {
     dispatch(getFilms(search));
   }, [dispatch, getFilms, search]);
-  const allFilms = films?.map((film) => <FilmItem showInfoBlocks={false} showLink film={film} />);
+  const allFilms = films?.map((film) => (
+    <FilmItem
+      key={film.title}
+      showInfoBlocks={false}
+      showLink
+      film={film}
+    />
+  ));
   return (
     <div>
       <PageTitle>

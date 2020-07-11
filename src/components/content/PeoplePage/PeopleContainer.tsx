@@ -34,6 +34,7 @@ const PeopleContainer: React.FC<StateToProps & DispatchToProps> = (
   }, [dispatch, getPeople, search]);
   const allPeople = people?.map((person) => (
     <PersonItem
+      key={person.name}
       showInfoBlocks={false}
       showLink
       person={person}

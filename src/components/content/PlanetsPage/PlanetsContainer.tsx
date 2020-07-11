@@ -34,6 +34,7 @@ const PlanetsContainer: React.FC<StateToProps & DispatchToProps> = (
   }, [dispatch, getPlanets, search]);
   const allPlanets = planets?.map((planet) => (
     <PlanetItem
+      key={planet.name}
       planet={planet}
       showLink
       showInfoBlocks={false}

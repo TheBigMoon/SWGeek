@@ -34,6 +34,7 @@ const StarshipsContainer: React.FC<StateToProps & DispatchToProps> = (
   }, [dispatch, getStarships, search]);
   const allStarships = starships?.map((starship) => (
     <StarshipItem
+      key={starship.name}
       starship={starship}
       showLink
       showInfoBlocks={false}

@@ -34,6 +34,7 @@ const SpeciesContainer: React.FC<StateToProps & DispatchToProps> = (
   }, [dispatch, getSpecies, search]);
   const allSpecies = species?.map((race) => (
     <RaceItem
+      key={race.name}
       race={race}
       showInfoBlocks={false}
       showLink
