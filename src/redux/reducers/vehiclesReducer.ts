@@ -6,7 +6,9 @@ const initialState: VehiclesStore = {
   vehicles: null,
   vehicle: null,
   prevPage: null,
-  nextPage: null
+  nextPage: null,
+  sortByAZ: false,
+  sortByZA: false
 };
 
 const vehiclesReducer = (state = initialState, action: VehiclesActionType): VehiclesStore => {

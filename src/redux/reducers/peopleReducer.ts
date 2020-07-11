@@ -6,7 +6,9 @@ const initialState: PeopleStore = {
   people: null,
   person: null,
   prevPage: null,
-  nextPage: null
+  nextPage: null,
+  sortByAZ: false,
+  sortByZA: false
 };
 
 const peopleReducer = (state = initialState, action: PeopleActionType): PeopleStore => {

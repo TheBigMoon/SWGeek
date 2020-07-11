@@ -6,7 +6,9 @@ const initialState: StarhipsStore = {
   starships: null,
   starship: null,
   prevPage: null,
-  nextPage: null
+  nextPage: null,
+  sortByAZ: false,
+  sortByZA: false
 };
 
 const starshipsReducer = (state = initialState, action: StarshipsActionType): StarhipsStore => {

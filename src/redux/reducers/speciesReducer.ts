@@ -6,7 +6,9 @@ const initialState: SpeciesStore = {
   species: null,
   race: null,
   prevPage: null,
-  nextPage: null
+  nextPage: null,
+  sortByAZ: false,
+  sortByZA: false
 };
 
 const speciesReducer = (state = initialState, action: SpeciesActionType): SpeciesStore => {

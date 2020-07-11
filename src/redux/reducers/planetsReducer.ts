@@ -6,7 +6,9 @@ const initialState: PlanetsStore = {
   planets: null,
   planet: null,
   prevPage: null,
-  nextPage: null
+  nextPage: null,
+  sortByAZ: false,
+  sortByZA: false
 };
 
 const planetsReducer = (state = initialState, action: PlanetsActionType): PlanetsStore => {
