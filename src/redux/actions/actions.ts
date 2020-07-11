@@ -33,7 +33,7 @@ import {
   GetPeople, GetPerson, SetPeople, SetPerson
 } from '../../types/actions/peopleActionsTypes';
 import {
-  GetFilm, GetFilms, SetFilm, SetFilms, SortByAZ, SortByZA
+  GetFilm, GetFilms, SetFilm, SetFilms, SortFilmsByAZ, SortFilmsByZA
 } from '../../types/actions/filmsActionsTypes';
 import {
   GetStarship, GetStarships, SetStarship, SetStarships
@@ -69,10 +69,10 @@ export const setFilms = (
 });
 export const getFilm = (filmId: number): GetFilm => ({ type: GET_FILM, filmId });
 export const setFilm = (film: Film): SetFilm => ({ type: SET_FILM, film });
-export const sortFilmsByAZ = (sortByAZ: boolean): SortByAZ => (
+export const sortFilmsByAZ = (sortByAZ: boolean): SortFilmsByAZ => (
   { type: SORT_FILMS_BY_A_Z, sortByAZ }
 );
-export const sortFilmsByZA = (sortByZA: boolean): SortByZA => (
+export const sortFilmsByZA = (sortByZA: boolean): SortFilmsByZA => (
   { type: SORT_FILMS_BY_Z_A, sortByZA }
 );
 
