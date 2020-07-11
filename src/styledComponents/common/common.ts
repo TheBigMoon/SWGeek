@@ -20,6 +20,7 @@ export const PageTitle = styled.div`
   text-align: center;
   font-size: 20px;
   font-weight: 600;
+  margin-bottom: 5px;
 `;
 
 interface FlexBoxProps {
