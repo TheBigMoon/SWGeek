@@ -11,7 +11,7 @@ const Sorter: React.FC<SelectorProps> = ({ sortByAZ, sortByZA }) => {
   return (
     <>
       <button onClick={() => dispatch(sortByAZ(true))}>A-Z</button>
-      <button onClick={() => dispatch(sortByZA(true))}>A-Z</button>
+      <button onClick={() => dispatch(sortByZA(true))}>Z-A</button>
     </>
   );
 };
