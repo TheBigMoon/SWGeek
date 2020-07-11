@@ -7,7 +7,7 @@ import {
   SORT_STARSHIPS_BY_A_Z, SORT_STARSHIPS_BY_Z_A
 } from '../../constants/actionTypeConstants';
 
-export type StarshipsActionType = SetStarships | SetStarship
+export type StarshipsActionType = SetStarships | SetStarship | SortStarshipsByAZ | SortStarshipsByZA
 
 export interface GetStarships {type: typeof GET_STARSHIPS, page: string}
 export interface SetStarships {

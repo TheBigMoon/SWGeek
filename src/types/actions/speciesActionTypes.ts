@@ -8,7 +8,7 @@ import {
   SORT_SPECIES_BY_Z_A
 } from '../../constants/actionTypeConstants';
 
-export type SpeciesActionType = SetSpecies | SetRace
+export type SpeciesActionType = SetSpecies | SetRace | SortSpeciesByAZ | SortSpeciesByZA
 
 export interface GetSpecies {type: typeof GET_SPECIES, page: string}
 export interface SetSpecies {

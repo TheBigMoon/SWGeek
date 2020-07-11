@@ -7,7 +7,7 @@ import {
   SORT_VEHICLES_BY_A_Z, SORT_VEHICLES_BY_Z_A
 } from '../../constants/actionTypeConstants';
 
-export type VehiclesActionType = SetVehicles | SetVehicle
+export type VehiclesActionType = SetVehicles | SetVehicle | SortVehiclesByAZ | SortVehiclesByZA
 
 export interface GetVehicles {type: typeof GET_VEHICLES, page: string}
 export interface SetVehicles {

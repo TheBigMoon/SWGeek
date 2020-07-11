@@ -8,7 +8,7 @@ import {
   SORT_PLANETS_BY_Z_A
 } from '../../constants/actionTypeConstants';
 
-export type PlanetsActionType = SetPlanets | SetPlanet
+export type PlanetsActionType = SetPlanets | SetPlanet | SortPlanetsByAZ | SortPlanetsByZA
 
 export interface GetPlanets {type: typeof GET_PLANETS, page: string}
 export interface SetPlanets {
